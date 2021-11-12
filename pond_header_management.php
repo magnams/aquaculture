@@ -8,10 +8,40 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
       // define variables
-      $id = "SELECT MAX( id ) FROM pond_header;" + 1;
+      $result =  $conn->query("SELECT MAX( pond_header_id  ) FROM pond_header;");
+      $id = mysqli_fetch_array($result)[0] + 1;
+      // var_dump($id);
       $name = "";
-      $idErr = $nameErr = ""; ?>
+      $idErr = $nameErr = ""; 
+      $success = False;
+      
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["pond_name"])) {
+          $nameErr = "Pond Name is required";
+        } else {
+          $name = $_POST["pond_name"];
+        }
+      }
 
+      if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
+        if ( (empty($nameErr)) )  {
+          $date = date('Y-m-d H:i:s');
+          $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( '99','$_POST[pond_name]','$date' )";
+                    
+          if ($conn->query($sql) === TRUE) {
+            $success = True;
+
+            $newRecord = "<p>New record created successfully</p>";
+            $text =  '<b>Your Input:</b>' . '<ul><li>- Pond Header ID: ' . $id . '</li><li>- Pond Name: ' . $name . '</li></ul>';
+            $id += 1;
+          }
+        } 
+      }
+      unset($_POST);
+
+  ?>
+  
+  
       
 
       
@@ -38,14 +68,14 @@
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <div class="form-group">
                             <label>Pond Header ID:</label>
-                            <input type="text" class="form-control input-default " placeholder="รหัสบ่อเลี้ยง" name="pond_header_id" value="<?php echo $id; ?>" disabled>
+                            <input type="text" class="form-control input-default" placeholder="รหัสบ่อเลี้ยง" name="pond_header_id" value="<?php echo $id; ?>" disabled>
                         </div>
                         <div class="form-group">
                             <label>Pond Name:</label><code> * <?php echo $nameErr;?></code>
-                            <input type="text" class="form-control input-default " placeholder="ระบุชื่อบ่อเลี้ยง" name="pond_name" id="pond_name">
+                            <input type="text" class="form-control input-default" placeholder="ระบุชื่อบ่อเลี้ยง" name="pond_name" id="pond_name">
                         </div>
-                        <button type="submit" class="btn btn-primary-lg">Insert</button>   
-                        <button type="button" id="btnReset" class="btn btn-secondary-lg">Reset</button>                        
+                        <button type="submit" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>   
+                        <button type="button" id="btnReset" class="btn btn-dark btn-flat btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Reset</button>                     
                     </form>
                 </div>
             </div>  
@@ -58,36 +88,26 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-6">
+
+              <?php if( $success == True ) : ?> 
+                
+                <div class="alert alert-info">
+                  <?php echo $newRecord ?>
+                  <?php echo $text ?>
+                </div>
+                
+              <?php elseif( !(empty($nameErr)) ) : ?>
+                  
+                  <div class="alert alert-danger">Error: Please Fill Required Form !!</div>
+
+              <?php else : ?> 
+                  
+
+              <?php endif; ?>
               
-            <?php
 
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (empty($_POST["pond_header_id"])) {
-                  $idErr = "Pond Header ID is required";
-                } else {
-                  $id = $_POST["pond_header_id"];
-                }
-                if (empty($_POST["pond_name"])) {
-                  $nameErr = "Pond Name is required";
-                } else {
-                  $name = $_POST["pond_name"];
-                }
-
-                if ( empty($idErr) && empty($nameErr) ) {
-                  $date = date('Y-m-d H:i:s');
-                  $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( '99','$_POST[pond_name]','$date' )";
-                            
-                  if ($conn->query($sql) === TRUE) {
-                    echo "New record created successfully";
-                    echo "<p><b>Your Input:</b>" . ' ' . $id . ' ' . $name . '</p>';
-                  }
-                } 
-              }
-              
-              $conn->close();
-
-            ?>
+              <?php $conn->close(); ?>
           </div>
         </div>
         <?php include 'layout/copyright.php';?>
@@ -106,10 +126,13 @@
 
   $( document ).ready(function() {
     $("#btnReset").click(function(){
-        // $("#pond_name").value() = "";
         location.reload();
     });
   });
+
+  if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+  }   
 
 </script>
     <?php include 'layout/footer.php';?>

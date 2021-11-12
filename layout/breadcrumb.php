@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-lg-8 p-r-0 title-margin-right">
-        <div class="page-header">
+        <div class="page-header" style="display: flex; align-items: center;">
             <div class="page-title">
-                <h2>Hi!! <span>Welcome to Aquaculture Feeding Management Application</span></h2>
+                <h6>Hi !! Welcome to Aquaculture Feeding Management Application</h6>
             </div>
         </div>
     </div>

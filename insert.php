@@ -3,7 +3,7 @@
 <title>Insert data to PostgreSQL with php - creating a simple web application</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
-li {listt-style: none;}
+li {list-style: none;}
 </style>
 </head>
 <body>
