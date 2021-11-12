@@ -72,23 +72,24 @@
         }
 
       } 
-    //  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //   $date = date('Y-m-d H:i:s');
-    //   $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( '2','$_POST[pond_name]','$date' )";
 
-    //   if ($conn->query($sql) === TRUE) {
-    //     echo "New record created successfully";
-    //     echo "<h2>Your Input:</h2>";
-    //     echo $id . ' ' . $name;
+      if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST["pond_header_id"]) && empty($_POST["pond_name"])) {
+        $date = date('Y-m-d H:i:s');
+        $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( '2','$_POST[pond_name]','$date' )";
 
-    //   } else {
-    //     echo "Error: " . $sql . "<br>" . $conn->error;
-    //   }
-
-    //   $conn->close();
-
-    // }
-
+        if (empty($_POST["pond_header_id"]) && empty($_POST["pond_name"])) {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+          
+        } else {
+    
+            if ($conn->query($sql) === TRUE) {
+              echo "New record created successfully";
+              echo "<h2>Your Input:</h2>";
+              echo $id . ' ' . $name;
+          }
+        }
+      }
+  $conn->close();
 ?>
           </div>
         </div>
