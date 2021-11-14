@@ -61,7 +61,7 @@
             <div class="card"> 
               <div class="card-title">
                 <h4>Pond Header Management</h4>
-                <p>เพิ่มชื่อบ่อเลี้ยง</p>
+                <p>เพิ่มชื่อบ่อเลี้ยงสำหรับเลี้ยงสัตว์น้ำ</p>
               </div>  
               <div class="card-body">
                 <div class="basic-form">
