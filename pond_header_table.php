@@ -40,9 +40,11 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="card">
-                <div class="card-title">
+                <div class="card-title" style="position: relative;">
                     <h4>Table Basic </h4>
-                    
+                    <span>
+                      <button style="position: absolute; right:0">New</button>
+                    </span>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
