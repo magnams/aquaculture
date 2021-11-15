@@ -2,7 +2,7 @@
     <div class="col-lg-8 p-r-0 title-margin-right">
         <div class="page-header" style="display: flex; align-items: center;">
             <div class="page-title">
-                <h6>Hi !! Welcome to Aquaculture Feeding Management Application</h6>
+                <h6>Hi !! Welcome Back to Aquaculture Feeding Management Application</h6>
             </div>
         </div>
     </div>

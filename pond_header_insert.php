@@ -7,6 +7,9 @@
   <?php include 'layout/headbar.php';?>
   <?php include 'setting/dbconnection.php';?>
   <?php
+
+      $_SESSION['user_id'] = 99;
+
       // define variables
       $result =  $conn->query("SELECT MAX( pond_header_id  ) FROM pond_header;");
       $id = mysqli_fetch_array($result)[0] + 1;
@@ -26,7 +29,7 @@
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
           $date = date('Y-m-d H:i:s');
-          $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( '99','$_POST[pond_name]','$date' )";
+          $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( $_SESSION[user_id],'$_POST[pond_name]','$date' )";
                     
           if ($conn->query($sql) === TRUE) {
             $success = True;

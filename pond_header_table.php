@@ -7,7 +7,10 @@
   <?php include 'layout/headbar.php';?>
   <?php include 'setting/dbconnection.php';?>
   <?php
-    $sql = "SELECT `pond_header_id`, `pond_name`, `created_at`, `updated_at` FROM `pond_header` WHERE user_id = 99";
+  
+    $_SESSION['user_id'] = 99;
+  
+    $sql = "SELECT `pond_header_id`, `pond_name`, `created_at`, `updated_at` FROM `pond_header` WHERE user_id = $_SESSION[user_id];";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
