@@ -43,11 +43,13 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="card">
-                <div class="card-title" style="position: relative;">
-                    <h4>Table Basic </h4>
+                <div class="card-title" style="position: relative; margin-bottom: inherit;">
+                    <h4>Pond Header Management</h4>
                     <span>
-                      <button style="position: absolute; right:0">New</button>
+                      <button style="position: absolute; right:0" onClick="javascript:window.open('pond_header_add.php', '_blank');" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"> 
+                        <i class="ti-plus"></i>Add New Header</button>
                     </span>
+                    <p style="font-size: medium;">( รายการชื่อบ่อเลี้ยง )</p>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -57,8 +59,8 @@
                                     <th>Pond Header ID</th>
                                     <th>Pond Name</th>
                                     <th>Created Date</th>
-                                    <th>Update Date</th>
-                                    <th>#</th>
+                                    <th>Updated Date</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,10 +69,14 @@
                                       <td> <?php echo $value["pond_header_id"]; ?></td>
                                       <td><span class="badge badge-primary"><?php echo $value["pond_name"]; ?></span></td>
                                       <td><?php echo $value["created_at"]; ?></td>
-                                      <td class="color-primary"><?php echo $value["updated_at"]; ?></td>
+                                      <td><?php echo $value["updated_at"]; ?></td>
                                       <td>
-                                        <a href="pond_header_edit.php?id=<?php echo $value["pond_header_id"]; ?>">Edit</a>&nbsp;
-                                        <a href="pond_header_delete.php?id=<?php echo $value["pond_header_id"]; ?>" onclick="return confirm('Do you really want to delete?');">Delete</a>
+                                        <a href="pond_header_edit.php?id=<?php echo $value["pond_header_id"]; ?>">
+                                          <i class="ti-pencil-alt" style="color: inherit; font-size: large;"></i>
+                                        </a>&nbsp;
+                                        <a href="pond_header_delete.php?id=<?php echo $value["pond_header_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
+                                          <i class="ti-trash" style="color: red; font-size: large;"></i>
+                                        </a>
                                       </td>
                                   </tr>                                
                               <?php endforeach;?>
@@ -81,8 +87,8 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="card">
-              <img src="https://www.technologychaoban.com/wp-content/uploads/2016/07/Saway-8-1024x683.jpg" alt="kung">  
+            <div class="card" style="background: inherit;">
+              <img style="object-fit: scale-down; object-position: 50% 20%;" src="assets\images\new\undraw_explore_re_8l4v_b.svg" alt="">  
             </div>
           </div>
         </div>

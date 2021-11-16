@@ -15,6 +15,6 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header('Location: pond_header_table.php');
+header('Location: pond_header.php');
 
 ?>

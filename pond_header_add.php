@@ -63,8 +63,8 @@
           <div class="col-lg-6">
             <div class="card"> 
               <div class="card-title">
-                <h4>Pond Header Management</h4>
-                <p>เพิ่มชื่อบ่อเลี้ยงสำหรับเลี้ยงสัตว์น้ำ</p>
+                <h4>Pond Header New</h4>
+                <p style="font-size: medium;">( เพิ่มชื่อบ่อเลี้ยง )</p>
               </div>  
               <div class="card-body">
                 <div class="basic-form">
@@ -77,42 +77,36 @@
                             <label>Pond Name:</label><code> * <?php echo $nameErr;?></code>
                             <input type="text" class="form-control input-default" placeholder="ระบุชื่อบ่อเลี้ยง" name="pond_name" id="pond_name">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>   
-                        <button type="button" id="btnReset" class="btn btn-dark btn-flat btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Reset</button>                     
+                        <button type="submit" class="btn btn-info btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>   
+                        <button type="button" id="btnReset" class="btn btn-default btn-flat btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Reset</button>                     
                     </form>
                 </div>
-            </div>  
+              </div>  
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="card">
-              <img src="https://image.bangkokbiznews.com/image/kt/media/image/pr/2018/03/23/38634/750x422_38634_1521801366.jpg" alt="kung">  
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-
+            <div>
               <?php if( $success == True ) : ?> 
-                
+
                 <div class="alert alert-info">
                   <?php echo $newRecord ?>
                   <?php echo $text ?>
                 </div>
-                
+
               <?php elseif( !(empty($nameErr)) ) : ?>
-                  
                   <div class="alert alert-danger">Error: Please Fill Required Form !!</div>
 
               <?php else : ?> 
-                  
-
               <?php endif; ?>
-              
 
               <?php $conn->close(); ?>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card" style="background: inherit;">
+              <img style="object-fit: scale-down; object-position: 50% 20%;" src="assets\images\new\undraw_explore_re_8l4v_lb.svg" alt="">  
+            </div>
           </div>
         </div>
+        
         <?php include 'layout/copyright.php';?>
       </section>
       <!-- content end-->
