@@ -41,7 +41,7 @@
       <!-- content start here-->
       <section id="main-content">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="card">
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
                     <h4>Pond Header Management</h4>
@@ -86,11 +86,11 @@
                 </div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <div class="card" style="background: inherit;">
               <img style="object-fit: scale-down; object-position: 50% 20%;" src="assets\images\new\undraw_explore_re_8l4v_b.svg" alt="">  
             </div>
-          </div>
+          </div> -->
         </div>
 
 

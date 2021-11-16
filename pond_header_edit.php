@@ -7,7 +7,6 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
 
-      $_SESSION['user_id'] = 99;
       $id = $_GET['id'];
       
       
@@ -29,7 +28,7 @@
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
           $date = date('Y-m-d H:i:s');
-          $sql = "UPDATE `pond_header` SET `user_id`=$_SESSION[user_id],`pond_name`='$_POST[pond_name]',`updated_at`='$date' WHERE `pond_header_id` = $id";
+          $sql = "UPDATE `pond_header` SET `pond_name`='$_POST[pond_name]',`updated_at`='$date' WHERE `pond_header_id` = $id";
                     
           if ($conn->query($sql) === TRUE) {
             $success = True;
