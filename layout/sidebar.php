@@ -15,8 +15,8 @@
                             </ul>
                         </li>
 
-                        <li class="label">Apps</li>
-                        <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Chart  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <li class="label">Setting</li>
+                        <!-- <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Chart  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>
                                 <li><a href="chart-flot.html">Add New</a></li>
                                 <li><a href="chart-morris.html">Add New</a></li>
@@ -26,15 +26,14 @@
                                 <li><a href="chart-sparkline.html">Sparkle</a></li>
                                 <li><a href="chart-knob.html">Knob</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a href="pond_header.php"><i class="ti-ink-pen"></i> Pond Header</a></li>
-                        <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li>
+                        <li><a href="product.php"><i class="ti-package"></i> Product</a></li>
                         <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>
-                        <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Widget</a></li>
                         
 
 
-                        <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li>
+                        <!-- <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li> -->
                         <li><a><i class="ti-close"></i> Logout</a></li>
                     </ul>
                 </div>

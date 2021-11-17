@@ -77,8 +77,8 @@
                             <label>Pond Name:</label><code> * <?php echo $nameErr;?></code>
                             <input type="text" class="form-control input-default" placeholder="ระบุชื่อบ่อเลี้ยง" name="pond_name" id="pond_name">
                         </div>
-                        <button type="submit" class="btn btn-info btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>   
-                        <button type="button" id="btnReset" class="btn btn-default btn-flat btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Reset</button>                     
+                        <button type="submit" class="btn btn-primary btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>&nbsp;
+                        <button type="button" id="btnClear" class="btn btn-default btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Clear</button> 
                     </form>
                 </div>
               </div>  
@@ -102,7 +102,7 @@
           </div>
           <div class="col-lg-6">
             <div class="card" style="background: inherit;">
-              <img style="object-fit: scale-down; object-position: 50% 20%;" src="assets\images\new\undraw_explore_re_8l4v_lb.svg" alt="">  
+              <img style="object-fit: scale-down; object-position: 50% 20%;" src="assets\images\new\undraw_explore_re_8l4v_b.svg" alt="">  
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
 <script>
 
   $( document ).ready(function() {
-    $("#btnReset").click(function(){
+    $("#btnClear").click(function(){
         location.reload();
     });
   });

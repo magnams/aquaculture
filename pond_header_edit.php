@@ -27,7 +27,7 @@
 
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
-          $date = date('Y-m-d H:i:s');
+          $date = date("Y-m-d H:i:s", strtotime('+6 hours'));
           $sql = "UPDATE `pond_header` SET `pond_name`='$_POST[pond_name]',`updated_at`='$date' WHERE `pond_header_id` = $id";
                     
           if ($conn->query($sql) === TRUE) {
@@ -78,7 +78,8 @@
                             <label>Pond Name:</label><code> * <?php echo $nameErr;?></code>
                             <input type="text" class="form-control input-default" placeholder="ระบุชื่อบ่อเลี้ยง" name="pond_name" id="pond_name" value="<?php echo $result['pond_name']; ?>">
                         </div>
-                        <button type="submit" id="btnEdit" class="btn btn-warning btn-addon btn-block" onclick="return confirm('Do you really want to edit?');"><i class="ti-pencil-alt"></i>Confirm to Edit</button>   
+                        <button type="submit" id="btnEdit" class="btn btn-warning btn-addon" onclick="return confirm('Do you really want to edit?');"><i class="ti-save"></i>Save</button>&nbsp;
+                        <button type="button" class="btn btn-default btn-addon" onclick="location.href='pond_header.php'"><i class="ti-control-skip-backward"></i>Go Back</button>     
                     </form>
                 </div>
               </div>  

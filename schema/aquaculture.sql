@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2021 at 12:37 AM
+-- Generation Time: Nov 16, 2021 at 02:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -56,20 +56,41 @@ CREATE TABLE `pond_header` (
 --
 
 INSERT INTO `pond_header` (`pond_header_id`, `user_id`, `pond_name`, `created_at`, `updated_at`) VALUES
-(78, 99, 'tyutyuds', '2021-11-13 20:29:39', '2021-11-15 17:03:31'),
-(82, 99, 'ty82d', '2021-11-15 21:12:44', '2021-11-15 16:49:13'),
-(83, 99, 'palm8383', '2021-11-15 22:03:06', '2021-11-15 16:39:09'),
-(84, 99, 'palm12', '2021-11-15 22:37:48', '2021-11-15 16:37:48'),
-(85, 99, 'dfasd', '2021-11-15 22:37:56', '2021-11-15 16:37:56'),
-(86, 99, 'sdfsd', '2021-11-15 22:38:01', '2021-11-15 16:38:01'),
-(87, 99, 'palm87', '2021-11-15 22:38:07', '2021-11-15 16:38:22'),
-(88, 99, 'gdfg', '2021-11-15 22:51:22', '2021-11-15 16:51:22'),
-(89, 99, 'asd', '2021-11-15 22:54:14', '2021-11-15 16:54:14'),
-(90, 99, 'sdff', '2021-11-15 22:54:37', '2021-11-15 16:54:37'),
-(91, 99, 'หกด', '2021-11-15 23:00:29', '2021-11-15 17:00:29'),
-(92, 99, 'หกดหกด', '2021-11-15 23:00:32', '2021-11-15 17:00:32'),
-(93, 99, 'หกดหด', '2021-11-15 23:04:07', '2021-11-15 17:04:07'),
-(94, 99, 'ดออ', '2021-11-15 23:04:17', '2021-11-15 17:04:17');
+(1, 99, 'บ่อกุ้ง A01-3', '2021-11-16 17:25:05', '2021-11-16 11:45:46'),
+(2, 99, 'บ่อปลา B01', '2021-11-16 17:25:13', '2021-11-16 11:25:13'),
+(3, 99, 'บ่อปลาคราฟ-001', '2021-11-16 20:53:55', '2021-11-16 14:53:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `brand` varchar(100) DEFAULT NULL,
+  `pallet_no` varchar(50) DEFAULT NULL,
+  `lot_no` varchar(50) DEFAULT NULL,
+  `unit_price` decimal(10,2) DEFAULT NULL,
+  `unit_weight` decimal(10,2) DEFAULT NULL,
+  `remaining_stock` decimal(10,2) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `user_id`, `product_name`, `brand`, `pallet_no`, `lot_no`, `unit_price`, `unit_weight`, `remaining_stock`, `created_at`, `updated_at`) VALUES
+(1, 99, 'peddigree', NULL, NULL, NULL, '10.00', '56.00', NULL, '2021-11-16 17:02:49', NULL),
+(2, 99, 'peddigree2', NULL, NULL, NULL, '10.25', '55.60', NULL, '2021-11-16 17:02:49', NULL),
+(3, 99, '342', '', '', '', '0.00', '0.00', '0.00', '2021-11-16 20:18:51', '0000-00-00 00:00:00'),
+(4, 99, 'ทับทิม', 'ertge', 'erg', '453', '1222.00', '12.00', '2.00', '2021-11-16 20:20:37', '2021-11-16 14:20:37'),
+(5, 99, 'reg', 'erg', '', '', '0.00', '0.00', '0.00', '2021-11-16 20:21:44', '2021-11-16 14:21:44'),
+(6, 99, 'six product', 'Brand', 'Pallet ', 'Lot ', '100.00', '20.00', '30.00', '2021-11-16 20:40:43', '2021-11-16 14:43:18');
 
 -- --------------------------------------------------------
 
@@ -106,6 +127,12 @@ ALTER TABLE `pond_header`
   ADD PRIMARY KEY (`pond_header_id`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`product_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -125,7 +152,13 @@ ALTER TABLE `pond`
 -- AUTO_INCREMENT for table `pond_header`
 --
 ALTER TABLE `pond_header`
-  MODIFY `pond_header_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `pond_header_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`

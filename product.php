@@ -1,6 +1,6 @@
 
 
-<?php $PageTitle="Pond Header Management" ?>
+<?php $PageTitle="Product Management" ?>
 <?php include 'layout/header.php';?>
 <body>
   <?php include 'layout/sidebar.php';?>
@@ -10,7 +10,7 @@
   
     $_SESSION['user_id'] = 99;
   
-    $sql = "SELECT `pond_header_id`, `pond_name`, `created_at`, `updated_at` FROM `pond_header` WHERE user_id = $_SESSION[user_id];";
+    $sql = "SELECT `product_id`, `user_id`, `product_name`, `brand`, `pallet_no`, `lot_no`, `unit_price`, `unit_weight`, `remaining_stock`, `created_at`, `updated_at` FROM `product` WHERE user_id = $_SESSION[user_id];";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -41,24 +41,29 @@
       <!-- content start here-->
       <section id="main-content">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="card">
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
-                    <h4>Pond Header Management</h4>
+                    <h4>Product Management</h4>
                     <span>
-                      <button style="position: absolute; right:0" onClick="javascript:window.open('pond_header_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
-                        <i class="ti-plus"></i>Add New Header</button>
+                      <button style="position: absolute; right:0" onClick="javascript:window.open('product_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
+                        <i class="ti-plus"></i>Add New Product</button>
                     </span>
-                    <p style="font-size: medium;">( รายการชื่อบ่อเลี้ยง )</p>
+                    <p style="font-size: medium;">( รายการผลิตภัณฑ์อาหารเลี้ยงสัตว์น้ำ )</p>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Pond Header ID</th>
-                                    <th>Pond Name</th>
-                                    <th>Created Date</th>
+                                    <th>Product ID</th>
+                                    <th>Product Name</th>
+                                    <th>Brand</th>
+                                    <th>Pallet Number</th>
+                                    <th>Lot Number</th>
+                                    <th>Unit Price</th>
+                                    <th>Unit Weight</th>
+                                    <th>Remaining Stock</th>
                                     <th>Updated Date</th>
                                     <th>Actions</th>
                                 </tr>
@@ -66,15 +71,20 @@
                             <tbody>
                               <?php foreach ($result as $value): ?>
                                   <tr>
-                                      <td> <?php echo $value["pond_header_id"]; ?></td>
-                                      <td><span class="badge badge-primary"><?php echo $value["pond_name"]; ?></span></td>
-                                      <td><?php echo $value["created_at"]; ?></td>
+                                      <td> <?php echo $value["product_id"]; ?></td>
+                                      <td><span class="badge badge-primary"><?php echo $value["product_name"]; ?></span></td>
+                                      <td><?php echo $value["brand"]; ?></td>
+                                      <td><?php echo $value["pallet_no"]; ?></td>
+                                      <td><?php echo $value["lot_no"]; ?></td>
+                                      <td>&#3647; <?php echo $value["unit_price"]; ?></td>
+                                      <td><?php echo $value["unit_weight"]; ?></td>
+                                      <td class="color-success"><?php echo $value["remaining_stock"]; ?></td>
                                       <td><?php echo $value["updated_at"]; ?></td>
                                       <td>
-                                        <a href="pond_header_edit.php?id=<?php echo $value["pond_header_id"]; ?>">
+                                        <a href="product_edit.php?id=<?php echo $value["product_id"]; ?>">
                                           <i class="ti-pencil-alt" style="color: inherit; font-size: large;"></i>
                                         </a>&nbsp;
-                                        <a href="pond_header_delete.php?id=<?php echo $value["pond_header_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
+                                        <a href="product_delete.php?id=<?php echo $value["product_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
                                           <i class="ti-trash" style="color: red; font-size: large;"></i>
                                         </a>
                                       </td>
