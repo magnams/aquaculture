@@ -169,10 +169,9 @@
                             <img class="mx-auto rounded-circle" src="assets\images\new\front\palm.jpg" alt="..." />
                             <h4>Palm Chartyingcharoen</h4>
                             <p class="text-muted">Master Student</p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.datacamp.com/profile/palmch" target="_blank"><i class="fas fa-laptop"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/magnams/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.datacamp.com/profile/palmch" target="_blank"><i class="fas fa-laptop-code"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="mailto: palm.cha@g.swu.ac.th"><i class="fab fa-google"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://steamcommunity.com/profiles/76561198093746278/" target="_blank"><i class="fab fa-steam" style="font-size: larger;"></i></a>
-                            <!-- <a class="btn btn-dark btn-social mx-2" href="https://www.datacamp.com/profile/palmch" target="_blank"><i><img src="assets\images\new\front\datacamp.png" alt="" style="max-width: 50%;max-height: 50%;"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
