@@ -2,15 +2,15 @@
         <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
             <div class="nano">
                 <div class="nano-content">
-                    <div class="logo"><a href="index.html">
+                    <div class="logo"><a href="index.php">
                         <img src="assets/images/new/uranus-icon.png" alt="" />
-                        <span>Aqua DM</span></a>
+                        <span>Aqua Feeding</span></a>
                     </div>
                     <ul>
                         <li class="label">Main</li>
                         <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">2</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>
-                                <li><a href="index.html">Dashboard 1</a></li>
+                                <li><a href="index.php">Dashboard 1</a></li>
                                 <li><a href="index1.html">Dashboard 2</a></li>                           
                             </ul>
                         </li>

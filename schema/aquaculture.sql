@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2021 at 02:56 PM
+-- Generation Time: Nov 17, 2021 at 04:33 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -58,7 +58,8 @@ CREATE TABLE `pond_header` (
 INSERT INTO `pond_header` (`pond_header_id`, `user_id`, `pond_name`, `created_at`, `updated_at`) VALUES
 (1, 99, 'บ่อกุ้ง A01-3', '2021-11-16 17:25:05', '2021-11-16 11:45:46'),
 (2, 99, 'บ่อปลา B01', '2021-11-16 17:25:13', '2021-11-16 11:25:13'),
-(3, 99, 'บ่อปลาคราฟ-001', '2021-11-16 20:53:55', '2021-11-16 14:53:55');
+(3, 99, 'บ่อปลาคราฟ-001', '2021-11-16 20:53:55', '2021-11-16 14:53:55'),
+(4, 99, '1232', '2021-11-17 22:29:35', '2021-11-17 16:29:35');
 
 -- --------------------------------------------------------
 
@@ -86,11 +87,11 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`product_id`, `user_id`, `product_name`, `brand`, `pallet_no`, `lot_no`, `unit_price`, `unit_weight`, `remaining_stock`, `created_at`, `updated_at`) VALUES
 (1, 99, 'peddigree', NULL, NULL, NULL, '10.00', '56.00', NULL, '2021-11-16 17:02:49', NULL),
-(2, 99, 'peddigree2', NULL, NULL, NULL, '10.25', '55.60', NULL, '2021-11-16 17:02:49', NULL),
+(2, 99, 'peddigree2', '', '', '', '10.25', '55.60', '0.00', '2021-11-16 17:02:49', '2021-11-17 07:54:51'),
 (3, 99, '342', '', '', '', '0.00', '0.00', '0.00', '2021-11-16 20:18:51', '0000-00-00 00:00:00'),
 (4, 99, 'ทับทิม', 'ertge', 'erg', '453', '1222.00', '12.00', '2.00', '2021-11-16 20:20:37', '2021-11-16 14:20:37'),
 (5, 99, 'reg', 'erg', '', '', '0.00', '0.00', '0.00', '2021-11-16 20:21:44', '2021-11-16 14:21:44'),
-(6, 99, 'six product', 'Brand', 'Pallet ', 'Lot ', '100.00', '20.00', '30.00', '2021-11-16 20:40:43', '2021-11-16 14:43:18');
+(6, 99, 'six product', 'Brand', 'Pallet ', 'Lot ', '100.00', '20.00', '30.00', '2021-11-16 20:40:43', '2021-11-16 21:00:54');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ ALTER TABLE `pond`
 -- AUTO_INCREMENT for table `pond_header`
 --
 ALTER TABLE `pond_header`
-  MODIFY `pond_header_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pond_header_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`

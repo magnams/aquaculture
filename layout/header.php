@@ -14,7 +14,7 @@ session_start();
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
-    <link rel="icon" type="image/x-icon" href="assets\images\new\shrimp16.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/new/shrimp16.png">
 
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->
