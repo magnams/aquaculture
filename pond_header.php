@@ -41,7 +41,7 @@
       <!-- content start here-->
       <section id="main-content">
         <div class="row">
-          <div class="col-lg-8">
+          <div class="col-lg-12">
             <div class="card">
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
                     <h4>Pond Header Management</h4>
