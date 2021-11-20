@@ -8,12 +8,14 @@
                     </div>
                     <ul>
                         <li class="label">Main</li>
-                        <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">2</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <li><a href="#"><i class="ti-write"></i> Feed Records</a></li>
+
+                        <!-- <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">2</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>
                                 <li><a href="index.php">Dashboard 1</a></li>
                                 <li><a href="index1.html">Dashboard 2</a></li>                           
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li class="label">Setting</li>
                         <!-- <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Chart  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -28,13 +30,11 @@
                             </ul>
                         </li> -->
                         <li><a href="pond_header.php"><i class="ti-ink-pen"></i> Pond Header</a></li>
+                        <li><a href="pond_status.php"><i class="ti-time"></i> Pond Status</a></li>
                         <li><a href="product.php"><i class="ti-package"></i> Product</a></li>
                         <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>
-                        
 
-
-                        <!-- <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li> -->
-                        <li><a><i class="ti-close"></i> Logout</a></li>
+                        <li><a href="logout.php"><i class="ti-close"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>
