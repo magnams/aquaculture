@@ -47,7 +47,7 @@
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
                     <h4><?php echo $PageTitle ?></h4>
                     <span>
-                      <button style="position: absolute; right:0" onClick="javascript:window.open('product_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
+                      <button style="position: absolute; right:0" onClick="javascript:window.open('pond_status_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
                         <i class="ti-plus"></i>Add New Pond</button>
                     </span>
                     <p style="font-size: medium;">( รายการสถานะบ่อเลี้ยง )</p>
@@ -88,10 +88,10 @@
                                       </td>
 
                                       <td>
-                                        <a href="pond_status.php?id=<?php echo $value["pond_id"]; ?>">
+                                        <a href="pond_status_edit.php?id=<?php echo $value["pond_id"]; ?>">
                                           <i class="ti-pencil-alt" style="color: inherit; font-size: large;"></i>
                                         </a>&nbsp;
-                                        <a href="pond_status.php?id=<?php echo $value["pond_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
+                                        <a href="pond_status_delete.php?id=<?php echo $value["pond_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
                                           <i class="ti-trash" style="color: red; font-size: large;"></i>
                                         </a>
                                       </td>

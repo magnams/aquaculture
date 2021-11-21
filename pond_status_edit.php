@@ -1,5 +1,5 @@
 
-<?php $PageTitle="Edit Product" ?>
+<?php $PageTitle="Edit Pond" ?>
 <?php include 'layout/header.php';?>
 <body>
   <?php include 'layout/sidebar.php';?>
@@ -9,34 +9,50 @@
 
       $id = $_GET['id'];
       
+      $sql = "SELECT a.`pond_id`, b.`pond_name`, a.`pond_header_id`, a.`start_stocking_date`, a.`end_stocking_date`, a.`revenue`, a.`updated_at` 
+              FROM `pond` a
+              INNER JOIN `pond_header` b on a.pond_header_id = b.pond_header_id
+              WHERE a.`pond_id` = $id LIMIT 1;";
       
-      $result =  $conn->query("SELECT * FROM `product` WHERE `product_id` = $id LIMIT 1;")->fetch_assoc();
+      $result =  $conn->query($sql)->fetch_assoc();
       
 
       $name = "";
       $idErr = $nameErr = ""; 
       $success = False;
       
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["product_name"])) {
-          $nameErr = "Product Name is required";
-        } else {
-          $name = $_POST["product_name"];
-        }
-      }
+      // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      //   if (empty($_POST["start_stocking_date"])) {
+      //     $nameErr = "Start Stocking Date is required";
+      //   } else {
+      //     $name = $_POST["start_stocking_date"];
+      //   }
+      // }
 
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
           $date = date("Y-m-d H:i:s", strtotime('+6 hours'));
-          $sql = "UPDATE `product` SET 
-                  `product_name`='$_POST[product_name]',
-                  `brand`='$_POST[brand]',
-                  `pallet_no`='$_POST[pallet_no]',
-                  `lot_no`='$_POST[lot_no]',
-                  `unit_price`='$_POST[unit_price]',
-                  `unit_weight`='$_POST[unit_weight]',
-                  `remaining_stock`='$_POST[remaining_stock]',          
-                  `updated_at`='$date' WHERE `product_id` = $id";
+
+          //end_date
+          $end_date = date_create($_POST['end_stocking_date']);
+        
+              $end_time = $_POST['end_stocking_time'];
+              $end_hour = substr($end_time,0,2);
+              $end_minutes = substr($end_time,3,2);
+
+          date_time_set($end_date, $end_hour, $end_minutes);
+
+          $end_date = date_format($end_date, 'Y-m-d H:i:s');
+          // echo $end_date
+
+
+
+
+
+          $sql = "UPDATE `pond` SET 
+                  `end_stocking_date`='$end_date',
+                  `revenue`='$_POST[revenue]',
+                  `updated_at`='$date' WHERE `pond_id` = $id";
           
 
           if ($conn->query($sql) === TRUE) {
@@ -44,25 +60,15 @@
 
             $newRecord = "<p>Edit record successfully</p>";
             $text =  '<b>Your Input:</b>' . 
-                    '<ul><li>- Product ID: ' . $id . 
-                    '</li><li>- Product Name: ' . $name . 
-                    '</li><li>- Brand: ' . $_POST['brand'] . 
-                    '</li><li>- Pallet Number: ' . $_POST['pallet_no'] . 
-                    '</li><li>- Lot Number: ' . $_POST['lot_no'] . 
-                    '</li><li>- Unit Price: ' . $_POST['unit_price'] . 
-                    '</li><li>- Unit Weight: ' . $_POST['unit_weight'] . 
-                    '</li><li>- Remianing Stock: ' . $_POST['remaining_stock'] . 
+                    '<ul><li>- Pond ID: ' . $id . 
+                    '</li><li>- End Stocking Datetime: ' . $_POST['end_stocking_date'] . 
+                    '</li><li>- Revenue: ' . $_POST['revenue'] . 
+                    '</li><li>- Updated Date: ' . $date . 
                     '</li></ul>';
 
             // for refresh new values
-            $result['product_name'] = $_POST['product_name'];
-            $result['brand'] = $_POST['brand'];
-            $result['pallet_no'] = $_POST['pallet_no'];
-            $result['lot_no'] = $_POST['lot_no'];
-            $result['unit_price'] = $_POST['unit_price'];
-            $result['unit_weight'] = $_POST['unit_weight'];
-            $result['remaining_stock'] = $_POST['remaining_stock'];
-            
+            $result['end_stocking_date'] = $_POST['end_stocking_date'];
+            $result['revenue'] = $_POST['revenue'];
           }
         } 
       }
@@ -90,49 +96,53 @@
             <div class="card"> 
               <div class="card-title">
                 <h4><?php echo $PageTitle ?></h4>
-                <p style="font-size: medium;">( แก้ไขชื่อผลิตภัณฑ์ )</p>
+                <p style="font-size: medium;">( แก้ไขรายละเอียดบ่อเลี้ยง )</p>
               </div>  
               <div class="card-body">
                 <div class="basic-form">
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?id=' . $id; ?>">
                         
 
-                        <div class="form-group">
-                            <label>Product ID:</label>
-                            <input type="text" class="form-control input-default" placeholder="" name="product_id" value="<?php echo $id; ?>" disabled>
+                    <div class="form-group">
+                            <label>Pond ID:</label>
+                            <input type="text" class="form-control input-default" placeholder="" name="pond_id" value="<?php echo $id; ?>" disabled>
                         </div>
                         <div class="form-group">
-                            <label>Product Name:</label><code> * <?php echo $nameErr;?></code>
-                            <input type="text" class="form-control input-default" placeholder="ระบุชื่อผลิตภัณฑ์" name="product_name" value="<?php echo $result['product_name']; ?>">
+                            <label>Pond Name:</label>
+                            <input type="text" class="form-control input-default" placeholder="" name="pond_header_name" value="<?php echo $result['pond_name']; ?>" disabled>
                         </div>
                         <div class="form-group">
-                            <label>Brand:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุชื่อทางการค้า" name="brand" value="<?php echo $result['brand']; ?>">
+                          <label>Start Stocking Date:</label>
+                          <input type="text" class="form-control input-default" placeholder="" name="start_stocking_date" value="<?php echo $result['start_stocking_date']; ?>" disabled>
                         </div>
-                        <div class="form-group">
-                            <label>Pallet Number:</label>
-                            <input type="text" class="form-control input-default" placeholder="" name="pallet_no" value="<?php echo $result['pallet_no']; ?>">
+
+
+
+                       
+                        <div class="form-group" id="endStockingDate">
+                            <label>End Stocking Date:</label>
+                            <div class="form-row">
+                              <div class="col">
+                                  <input type="date" class="form-control input-default" name="end_stocking_date" value="">
+                              </div>
+                              <div class="col">
+                                  <input type="time" class="form-control input-default" name="end_stocking_time" value="00:00">
+                              </div>
+                            </div>
                         </div>
+
+
+
+
+
                         <div class="form-group">
-                            <label>Lot Number:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุเลข lot" name="lot_no" value="<?php echo $result['lot_no']; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label>Unit Price:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุราคา" name="unit_price" value="<?php echo $result['unit_price']; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label>Unit Weight:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุน้ำหนัก" name="unit_weight" value="<?php echo $result['unit_weight']; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label>Remaining Stock:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุจำนวนที่เหลือ" name="remaining_stock" value="<?php echo $result['remaining_stock']; ?>">
+                            <label>Revenue:</label>
+                            <input type="number" class="form-control input-default" placeholder="ระบุรายได้" name="revenue">
                         </div>
 
 
                         <button type="submit" id="btnEdit" class="btn btn-warning btn-addon" onclick="return confirm('Do you really want to edit?');"><i class="ti-save"></i>Save</button>&nbsp;
-                        <button type="button" class="btn btn-default btn-addon" onclick="location.href='product.php'"><i class="ti-control-skip-backward"></i>Go Back</button>     
+                        <button type="button" class="btn btn-default btn-addon" onclick="location.href='pond_status.php'"><i class="ti-control-skip-backward"></i>Go Back</button>     
                     </form>
                 </div>
               </div>  

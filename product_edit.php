@@ -119,15 +119,15 @@
                         </div>
                         <div class="form-group">
                             <label>Unit Price:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุราคา" name="unit_price" value="<?php echo $result['unit_price']; ?>">
+                            <input type="number" class="form-control input-default" placeholder="ระบุราคา" name="unit_price" value="<?php echo $result['unit_price']; ?>">
                         </div>
                         <div class="form-group">
                             <label>Unit Weight:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุน้ำหนัก" name="unit_weight" value="<?php echo $result['unit_weight']; ?>">
+                            <input type="number" class="form-control input-default" placeholder="ระบุน้ำหนัก" name="unit_weight" value="<?php echo $result['unit_weight']; ?>">
                         </div>
                         <div class="form-group">
                             <label>Remaining Stock:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุจำนวนที่เหลือ" name="remaining_stock" value="<?php echo $result['remaining_stock']; ?>">
+                            <input type="number" class="form-control input-default" placeholder="ระบุจำนวนที่เหลือ" name="remaining_stock" value="<?php echo $result['remaining_stock']; ?>">
                         </div>
 
 

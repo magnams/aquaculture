@@ -28,7 +28,7 @@
 
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
-          $date = date('Y-m-d H:i:s');
+          $date = date("Y-m-d H:i:s", strtotime('+6 hours'));
           $sql = "INSERT INTO `product`(`user_id`, `product_name`, `brand`, `pallet_no`, `lot_no`, `unit_price`, `unit_weight`, `remaining_stock`, `updated_at`) 
                   VALUES ( $_SESSION[user_id],'$_POST[product_name]','$_POST[brand]','$_POST[pallet_no]','$_POST[lot_no]','$_POST[unit_price]','$_POST[unit_weight]','$_POST[remaining_stock]', '$date')";
           
@@ -103,15 +103,15 @@
                         </div>
                         <div class="form-group">
                             <label>Unit Price:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุราคา" name="unit_price">
+                            <input type="number" class="form-control input-default" placeholder="ระบุราคา" name="unit_price">
                         </div>
                         <div class="form-group">
                             <label>Unit Weight:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุน้ำหนัก" name="unit_weight">
+                            <input type="number" class="form-control input-default" placeholder="ระบุน้ำหนัก" name="unit_weight">
                         </div>
                         <div class="form-group">
                             <label>Remaining Stock:</label>
-                            <input type="text" class="form-control input-default" placeholder="ระบุจำนวนที่เหลือ" name="remaining_stock">
+                            <input type="number" class="form-control input-default" placeholder="ระบุจำนวนที่เหลือ" name="remaining_stock">
                         </div>
                         <button type="submit" class="btn btn-primary btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>&nbsp;
                         <button type="button" id="btnClear" class="btn btn-default btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Clear</button> 

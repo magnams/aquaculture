@@ -28,7 +28,7 @@
 
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
-          $date = date('Y-m-d H:i:s');
+          $date = date("Y-m-d H:i:s", strtotime('+6 hours'));
           $sql = "INSERT INTO `pond_header`(`user_id`, `pond_name`, `updated_at`) VALUES ( $_SESSION[user_id],'$_POST[pond_name]','$date' )";
                     
           if ($conn->query($sql) === TRUE) {
