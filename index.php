@@ -53,32 +53,32 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">ระบบจัดการการให้อาหารในฟาร์มสัตว์น้ำ</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-clipboard-list fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">จัดเก็บข้อมูลการให้อาหาร</h4>
+                        <p class="text-muted">ช่วยให้เกษตรกรสามารถบันทึกข้อมูลเกี่ยวกับการให้อาหาร รวมถึงป้องกันการสูญเสียที่อาจจะเกิดขึ้นระหว่างการบันทึกข้อมูล</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                            <i class="fa fa-chart-bar fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">วิเคราะห์ข้อมูลการให้อาหาร</h4>
+                        <p class="text-muted">รวบรวมข้อมูลที่ได้มาวิเคราะห์ถึงแนวโน้ม ปัญหา และแนวทางในการจัดการปริมาณสต็อกของอาหารที่มีอยู่ในฟาร์มให้อย่างเป็นระบบและมีประสิทธิภาพมากยิ่งขึ้น</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-shield-alt fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">ปลอดภัย</h4>
+                        <p class="text-muted">ข้อมูลที่ถูกบันทึกในระบบจะถูกจัดเก็บอย่างดีและไม่มีใครสามารถเข้าถึงได้นอกจากผู้ที่ใช้งานเท่านั้น</p>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About Project Plan</h2>
-                    <h3 class="section-subheading text-muted">ข้อมูลการวางแผนการดำเนินงานในปี 2021 Project: Aquaculture Feeding Management Application</h3>
+                    <h3 class="section-subheading text-muted">แผนงานของโครงการดำเนินงานในปี 2021 Project: Aquaculture Feeding Management Application</h3>
                 </div>
                 <ul class="timeline">
                     <li>
@@ -99,7 +99,11 @@
                                 <h4>7 - 9 Nov</h4>
                                 <h4 class="subheading">Conceptual data modeling</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body">
+                                <p class="text-muted">รวบรวมความคิดและทำความเข้าใจเกี่ยวกับข้อมูลที่ใช้งาน <i class='fas fa-angle-right'></i></p>
+                                <p class="text-muted">ออกแบบแนวทางในการจัดการกับข้อมูล <i class='fas fa-angle-right'></i></p>
+                                <p class="text-muted">ศึกษาความเป็นไปได้ของระบบที่จะใช้ในการจัดเก็บข้อมูล <i class='fas fa-angle-right'></i></p>
+                            </div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -109,7 +113,9 @@
                                 <h4>10 - 13 Nov</h4>
                                 <h4 class="subheading">Logical design</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> ออกแบบตารางความสัมพันธ์ระหว่างข้อมูลที่บันทึกได้</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> สร้าง E-R diagram จากตารางที่ได้</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> วางแผนโปรแกรมจริงที่จะใช้งานในการจัดการข้อมูล</p></div>
                         </div>
                     </li>
                     <li>
@@ -119,7 +125,8 @@
                                 <h4>14 - 20 Nov</h4>
                                 <h4 class="subheading">Physical design</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">ออกแบบฐานข้อมูลเชิงกายภาพในการจัดเก้บข้อมูล <i class='fas fa-angle-right'></i></p></div>
+                            <div class="timeline-body"><p class="text-muted">ตรวจสอบความถูกต้องของฐานข้อมูลที่ใช้ในการจัดเก็บ <i class='fas fa-angle-right'></i></p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -129,7 +136,11 @@
                                 <h4>21 Nov - 18 Dec</h4>
                                 <h4 class="subheading">Implementation</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> จัดทำฐานข้อมูลจริงที่จะใช้งาน</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> เขียนโค้ดคำสั่งต่างๆที่ใช้ในการออกแบบฐานข้อมูล</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> นำเข้าตัวอย่างของข้อมูลเข้าสู่ระบบ เพื่อทดสอบจริง</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> หาข้อบกพร่องที่อาจจะเกิดขึ้นในระบบ และดำเนินการแก้ไข</p></div>
+                            <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> เพิ่มเติมระบบต่างๆเท่าที่จำเป็น เพื่อให้ระบบมีความสมบูรณ์มากยิ่งขึ้น</p></div>
                         </div>
                     </li>
                     <li>
@@ -139,7 +150,8 @@
                                 <h4>19 - 23 Dec</h4>
                                 <h4 class="subheading">Documentation</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">สรุปผลการทำงาน และวิเคราะห์ถึงประโยชน์ที่ได้ <i class='fas fa-angle-right'></i></p></div>
+                            <div class="timeline-body"><p class="text-muted">จัดทำรูปเล่ม พร้อมสไลด์ที่ใช้ในการนำเสนอโปรเจค <i class='fas fa-angle-right'></i></p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -161,14 +173,14 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">ทีมงานผู้จัดทำ</h3>
                 </div>
                 <div class="row" style="justify-content: center">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets\images\new\front\palm.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="assets\images\new\front\palm2.jpg" alt="..." />
                             <h4>Palm Chartyingcharoen</h4>
-                            <p class="text-muted">Master Student</p>
+                            <p class="text-muted">Master Student <br>ID: 64199130052</p>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.datacamp.com/profile/palmch" target="_blank"><i class="fas fa-laptop-code"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="mailto: palm.cha@g.swu.ac.th"><i class="fab fa-google"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://steamcommunity.com/profiles/76561198093746278/" target="_blank"><i class="fab fa-steam" style="font-size: larger;"></i></a>
@@ -178,15 +190,15 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets\images\new\front\nin.jpg" alt="..." />
                             <h4>Pongthanin Wangkiat</h4>
-                            <p class="text-muted">Master Student</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <p class="text-muted">Master Student <br>ID: 64199130055</p>
+                            <a class="btn btn-dark btn-social mx-2" href="mailto: pongthanin.wangkiat@g.swu.ac.th"><i class="fab fa-google"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    <div class="col-lg-8 mx-auto text-center">
+                        <p class="large text-muted">ชั้นปีที่ 1 หลักสูตรวิทยาศาสตรมหาบัณฑิต คณะวิทยาศาสตร์ สาขาวิทยาการข้อมูล <br>มหาวิทยาลัยศรีนครินทรวิโรฒ กรุงเทพฯ ประเทศไทย</p>
+                    </div>
                 </div>
             </div>
         </section>
