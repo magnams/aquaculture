@@ -98,7 +98,7 @@
                             <div class="timeline-heading">
                                 <h4>7 - 9 Nov</h4>
                                 <h4 class="subheading">Conceptual data modeling</h4>
-                            </div>
+                            </div><hr>
                             <div class="timeline-body">
                                 <p class="text-muted">รวบรวมความคิดและทำความเข้าใจเกี่ยวกับข้อมูลที่ใช้งาน <i class='fas fa-angle-right'></i></p>
                                 <p class="text-muted">ออกแบบแนวทางในการจัดการกับข้อมูล <i class='fas fa-angle-right'></i></p>
@@ -112,7 +112,7 @@
                             <div class="timeline-heading">
                                 <h4>10 - 13 Nov</h4>
                                 <h4 class="subheading">Logical design</h4>
-                            </div>
+                            </div><hr>
                             <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> ออกแบบตารางความสัมพันธ์ระหว่างข้อมูลที่บันทึกได้</p></div>
                             <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> สร้าง E-R diagram จากตารางที่ได้</p></div>
                             <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> วางแผนโปรแกรมจริงที่จะใช้งานในการจัดการข้อมูล</p></div>
@@ -124,7 +124,7 @@
                             <div class="timeline-heading">
                                 <h4>14 - 20 Nov</h4>
                                 <h4 class="subheading">Physical design</h4>
-                            </div>
+                            </div><hr>
                             <div class="timeline-body"><p class="text-muted">ออกแบบฐานข้อมูลเชิงกายภาพในการจัดเก้บข้อมูล <i class='fas fa-angle-right'></i></p></div>
                             <div class="timeline-body"><p class="text-muted">ตรวจสอบความถูกต้องของฐานข้อมูลที่ใช้ในการจัดเก็บ <i class='fas fa-angle-right'></i></p></div>
                         </div>
@@ -135,7 +135,7 @@
                             <div class="timeline-heading">
                                 <h4>21 Nov - 18 Dec</h4>
                                 <h4 class="subheading">Implementation</h4>
-                            </div>
+                            </div><hr>
                             <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> จัดทำฐานข้อมูลจริงที่จะใช้งาน</p></div>
                             <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> เขียนโค้ดคำสั่งต่างๆที่ใช้ในการออกแบบฐานข้อมูล</p></div>
                             <div class="timeline-body"><p class="text-muted"><i class='fas fa-angle-left'></i> นำเข้าตัวอย่างของข้อมูลเข้าสู่ระบบ เพื่อทดสอบจริง</p></div>
@@ -149,7 +149,7 @@
                             <div class="timeline-heading">
                                 <h4>19 - 23 Dec</h4>
                                 <h4 class="subheading">Documentation</h4>
-                            </div>
+                            </div><hr>
                             <div class="timeline-body"><p class="text-muted">สรุปผลการทำงาน และวิเคราะห์ถึงประโยชน์ที่ได้ <i class='fas fa-angle-right'></i></p></div>
                             <div class="timeline-body"><p class="text-muted">จัดทำรูปเล่ม พร้อมสไลด์ที่ใช้ในการนำเสนอโปรเจค <i class='fas fa-angle-right'></i></p></div>
                         </div>
