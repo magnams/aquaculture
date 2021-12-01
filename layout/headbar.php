@@ -14,7 +14,7 @@
                         
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John Mayer &nbsp;
+                                <span class="user-avatar"><?php echo $_SESSION['user_id'] . ' ' .  $_SESSION['Firstname'] . ' ' . $_SESSION['Lastname'] . ' ' . $_SESSION['email']; ?> &nbsp;
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
@@ -25,7 +25,7 @@
                                     <div class="dropdown-content-body">
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="#" onClick="document.location.href='pond_header.php'">
                                                     <i class="ti-user"></i>
                                                     <span>Profile</span>
                                                 </a>
@@ -33,7 +33,7 @@
 
                                             
                                             <li>
-                                                <a href="#">
+                                                <a href="#" onClick="document.location.href='logout.php'">
                                                     <i class="ti-power-off"></i>
                                                     <span>Logout</span>
                                                 </a>
