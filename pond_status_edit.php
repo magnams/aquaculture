@@ -67,8 +67,10 @@
                     '</li></ul>';
 
             // for refresh new values
-            $result['end_stocking_date'] = $_POST['end_stocking_date'];
+            $result['end_stocking_date'] = $_POST['end_stocking_date']; 
+            $result['end_stocking_time'] = date('H:i',strtotime($_POST["end_stocking_time"]));
             $result['revenue'] = $_POST['revenue'];
+            echo $result['end_stocking_time'];
           }
         } 
       }
@@ -124,10 +126,10 @@
                             <label>End Stocking Date:</label>
                             <div class="form-row">
                               <div class="col">
-                                  <input type="date" class="form-control input-default" name="end_stocking_date" value="">
+                                  <input type="date" class="form-control input-default" name="end_stocking_date" value="<?php echo date('Y-m-d',strtotime($result["end_stocking_date"])) ?>">
                               </div>
                               <div class="col">
-                                  <input type="time" class="form-control input-default" name="end_stocking_time" value="00:00">
+                                  <input type="time" class="form-control input-default" name="end_stocking_time" value="<?php echo date('H:i',strtotime($result["end_stocking_date"])) ?>">
                               </div>
                             </div>
                         </div>

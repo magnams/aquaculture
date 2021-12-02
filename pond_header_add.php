@@ -53,8 +53,9 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
-      <?php $activePage="Pond-Header-Management" ?>
+      <?php $mainPageLink="pond_header.php" ?>
+      <?php $mainPage="Pond Header Management" ?>
+      <?php $activePage=$PageTitle ?>
       <?php include 'layout/breadcrumb.php';?>
                 
       <!-- content start here-->

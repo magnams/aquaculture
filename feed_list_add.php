@@ -96,7 +96,8 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
+      <?php $mainPageLink="feed_list.php" ?>
+      <?php $mainPage="Feed Records" ?>
       <?php $activePage=$PageTitle ?>
       <?php include 'layout/breadcrumb.php';?>
                 

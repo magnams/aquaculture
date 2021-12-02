@@ -157,8 +157,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>ABW:</label>
-                            <input type="text" class="form-control input-default" placeholder="จำไม่ได้ถามนิน" name="abw" value="<?php echo isset($result['ABW']) ? $result['ABW'] : ''; ?>">
+                            <label>Average Body Weight (g):</label>
+                            <input type="text" class="form-control input-default" placeholder="น้ำหนัก (กรัม)" name="abw" value="<?php echo isset($result['ABW']) ? $result['ABW'] : ''; ?>">
                         </div>
                         <div class="form-group">
                             <label>Feed Meal 1:</label>
