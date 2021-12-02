@@ -8,7 +8,7 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
 
-      $_SESSION['user_id'] = 99;
+      // $_SESSION['user_id'] = 99;
 
       // define variables
       $result =  $conn->query("SELECT MAX( pond_header_id  ) FROM pond_header;");

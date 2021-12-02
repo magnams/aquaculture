@@ -79,7 +79,8 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
+      <?php $mainPageLink="product.php" ?>
+      <?php $mainPage='Product Management' ?>
       <?php $activePage=$PageTitle ?>
       <?php include 'layout/breadcrumb.php';?>
                 

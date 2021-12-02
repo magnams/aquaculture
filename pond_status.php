@@ -1,4 +1,24 @@
+<!-- <style>
+  table.dataTable thead .sorting:after,
+  table.dataTable thead .sorting:before,
+  table.dataTable thead .sorting_asc:after,
+  table.dataTable thead .sorting_asc:before,
+  table.dataTable thead .sorting_asc_disabled:after,
+  table.dataTable thead .sorting_asc_disabled:before,
+  table.dataTable thead .sorting_desc:after,
+  table.dataTable thead .sorting_desc:before,
+  table.dataTable thead .sorting_desc_disabled:after,
+  table.dataTable thead .sorting_desc_disabled:before {
+    bottom: .5em;
+  }
+</style>
 
+<script>
+  $(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+</script> -->
 
 <?php $PageTitle="Pond Status Management" ?>
 <?php include 'layout/header.php';?>
@@ -19,7 +39,7 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
   
-    $_SESSION['user_id'] = 99;
+    // $_SESSION['user_id'] = 99;
   
     $sql = "SELECT a.`pond_id`, b.`pond_name`, a.`pond_header_id`, a.`start_stocking_date`, a.`end_stocking_date`, a.`revenue`, a.`updated_at` 
             FROM `pond` a
@@ -46,8 +66,9 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
-      <?php $activePage=$PageTitle ?>
+      <?php $mainPageLink="pond_status.php" ?>
+      <?php $mainPage=$PageTitle ?>
+      <?php $activePage='' ?>
       <?php include 'layout/breadcrumb.php';?>
                 
       <!-- content start here-->
@@ -65,7 +86,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="dtBasicExample">
                             <thead>
                                 <tr>
                                     <th>Pond ID</th>
@@ -73,7 +94,7 @@
                                     <th>Start Stocking Date</th>
                                     <th>End Stocking Date</th>
                                     <th>Revenue</th>
-                                    <th>Updated Date</th>
+                                    <!-- <th>Updated Date</th> -->
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -86,7 +107,7 @@
                                       <td><?php echo $value["start_stocking_date"]; ?></td>
                                       <td><?php echo $value["end_stocking_date"]; ?></td>
                                       <td class="color-success"><?php echo $value["revenue"]; ?></td>
-                                      <td><?php echo $value["updated_at"]; ?></td>
+                                      <!-- <td><?php echo $value["updated_at"]; ?></td> -->
                                       
                                       <td>
                                         <?php if( (isset($value["end_stocking_date"]) ? $value["end_stocking_date"] : date("Y-m-d H:i:s", strtotime('+6 hours')) ) >= date("Y-m-d H:i:s", strtotime('+6 hours'))  ) : ?> 
@@ -131,7 +152,10 @@
   </div>
 </div>
 <script>
-
+  $(document).ready(function () {
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+  });
 </script>
     <?php include 'layout/footer.php';?>
 </body>

@@ -75,7 +75,7 @@ if (isset($_POST['reg_user'])) {
 
   	$_SESSION['success'] = "คุณได้เข้าสู่ระบบเรียบร้อยแล้ว";
   	// header('location: index.php');
-    header('location: ../pond_header.php');
+    header('location: ../feed_list.php');
   }
 }
 
@@ -106,7 +106,7 @@ if (isset($_POST['login_user'])) {
       
   	  $_SESSION['success'] = "คุณได้เข้าสู่ระบบเรียบร้อยแล้ว";
   	  // header('location: index.php');
-  	  header('location: ../pond_header.php');
+  	  header('location: ../feed_list.php');
   	}else {
   		array_push($errors, "Username หรือ password ไม่ถูกต้อง");
   	}

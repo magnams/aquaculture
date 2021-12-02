@@ -20,7 +20,7 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
   
-    $_SESSION['user_id'] = 99;
+    // $_SESSION['user_id'] = 99;
   
     $sql = "SELECT `product_id`, `user_id`, `product_name`, `brand`, `pallet_no`, `lot_no`, `unit_price`, `unit_weight`, `remaining_stock`, `created_at`, `updated_at` FROM `product` WHERE user_id = $_SESSION[user_id];";
     $result = $conn->query($sql);
@@ -46,8 +46,9 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
-      <?php $activePage=$PageTitle ?>
+      <?php $mainPageLink="product.php" ?>
+      <?php $mainPage=$PageTitle ?>
+      <?php $activePage='' ?>
       <?php include 'layout/breadcrumb.php';?>
                 
       <!-- content start here-->

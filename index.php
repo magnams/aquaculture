@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To Aquaculture Feeding Management Application</div>
                 <div class="masthead-heading text-uppercase" style="font-size: 3.5em">Good to go</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="pond_header.php"><i class="fas fa-globe"></i> Enter</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="feed_list.php"><i class="fas fa-globe"></i> Enter</a>
             </div>
         </header>
         <!-- Services-->

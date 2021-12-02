@@ -8,7 +8,7 @@
                     </div>
                     <ul>
                         <li class="label">Main</li>
-                        <li><a href="#"><i class="ti-write"></i> Feed Records</a></li>
+                        <li><a href="feed_list.php"><i class="ti-write"></i> Feed Records</a></li>
 
                         <!-- <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">2</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>

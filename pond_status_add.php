@@ -8,7 +8,7 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
 
-      $_SESSION['user_id'] = 99;
+      // $_SESSION['user_id'] = 99;
 
       // define variables
       $result =  $conn->query("SELECT MAX( pond_id  ) FROM pond;");
@@ -109,7 +109,8 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
+      <?php $mainPageLink="pond_status.php" ?>
+      <?php $mainPage='Pond Status Management' ?>
       <?php $activePage=$PageTitle ?>
       <?php include 'layout/breadcrumb.php';?>
                 

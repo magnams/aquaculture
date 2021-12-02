@@ -1,5 +1,5 @@
 
-<?php $PageTitle="แก้ไขรายการบ่อเลี้ยง-Edit Pond Header" ?>
+<?php $PageTitle="Edit Pond Header" ?>
 <?php include 'layout/header.php';?>
 <body>
   <?php include 'layout/sidebar.php';?>
@@ -54,8 +54,9 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
-      <?php $activePage="Pond-Header-Edit" ?>
+      <?php $mainPageLink="pond_header.php" ?>
+      <?php $mainPage="Pond Header Management" ?>
+      <?php $activePage=$PageTitle ?>
       <?php include 'layout/breadcrumb.php';?>
                 
       <!-- content start here-->
@@ -64,7 +65,7 @@
           <div class="col-lg-6">
             <div class="card"> 
               <div class="card-title">
-                <h4>Pond Header Edit</h4>
+                <h4><?php echo $PageTitle ?></h4>
                 <p style="font-size: medium;">( แก้ไขชื่อบ่อเลี้ยง )</p>
               </div>  
               <div class="card-body">

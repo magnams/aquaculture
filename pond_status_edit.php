@@ -54,14 +54,14 @@
                   `revenue`='$_POST[revenue]',
                   `updated_at`='$date' WHERE `pond_id` = $id";
           
-
+          
           if ($conn->query($sql) === TRUE) {
             $success = True;
 
             $newRecord = "<p>Edit record successfully</p>";
             $text =  '<b>Your Input:</b>' . 
                     '<ul><li>- Pond ID: ' . $id . 
-                    '</li><li>- End Stocking Datetime: ' . $_POST['end_stocking_date'] . 
+                    '</li><li>- End Stocking Datetime: ' . $_POST['end_stocking_date'] . ' ' . $_POST['end_stocking_time'] . 
                     '</li><li>- Revenue: ' . $_POST['revenue'] . 
                     '</li><li>- Updated Date: ' . $date . 
                     '</li></ul>';
@@ -85,7 +85,8 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
+      <?php $mainPageLink="pond_status.php" ?>
+      <?php $mainPage='Pond Status Management' ?>
       <?php $activePage=$PageTitle ?>
       <?php include 'layout/breadcrumb.php';?>
                 

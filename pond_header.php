@@ -17,7 +17,7 @@
   <?php include 'setting/dbconnection.php';?>
   <?php
   
-    $_SESSION['user_id'] = 99;
+    // $_SESSION['user_id'] = 99;
   
     $sql = "SELECT `pond_header_id`, `pond_name`, `created_at`, `updated_at` FROM `pond_header` WHERE user_id = $_SESSION[user_id];";
     $result = $conn->query($sql);
@@ -43,8 +43,9 @@
 <div class="content-wrap">
   <div class="main">
     <div class="container-fluid">
-      <?php $mainPage="Dashboard" ?>
-      <?php $activePage="Pond-Header-Management" ?>
+      <?php $mainPageLink="pond_header.php" ?>
+      <?php $mainPage=$PageTitle ?>
+      <?php $activePage='' ?>
       <?php include 'layout/breadcrumb.php';?>
                 
       <!-- content start here-->
