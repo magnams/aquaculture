@@ -14,7 +14,7 @@
                         
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar"><?php echo $_SESSION['user_id'] . ' ' .  $_SESSION['Firstname'] . ' ' . $_SESSION['Lastname'] . ' ' . $_SESSION['email']; ?> &nbsp;
+                                <span class="user-avatar"><i class="ti-android"></i> &nbsp; <?php echo $_SESSION['user_id'] . ' ' .  $_SESSION['Firstname'] . ' ' . $_SESSION['Lastname'] . ' ' . $_SESSION['email']; ?> &nbsp;
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">

@@ -2,6 +2,17 @@
 
 <?php $PageTitle="Pond Status Management" ?>
 <?php include 'layout/header.php';?>
+
+<?php
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login/login.php');
+  }
+ 
+?>
+
+
 <body>
   <?php include 'layout/sidebar.php';?>
   <?php include 'layout/headbar.php';?>
