@@ -56,7 +56,7 @@
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
                     <h4>Pond Header Management</h4>
                     <span>
-                      <button style="position: absolute; right:0" onClick="javascript:window.open('pond_header_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
+                      <button style="position: absolute; right:0" onclick="location.href='pond_header_add.php'" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
                         <i class="ti-plus"></i>Add New Header</button>
                     </span>
                     <p style="font-size: medium;">( รายการชื่อบ่อเลี้ยง )</p>

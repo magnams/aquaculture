@@ -59,7 +59,7 @@
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
                     <h4><?php echo $PageTitle ?></h4>
                     <span>
-                      <button style="position: absolute; right:0" onClick="javascript:window.open('product_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
+                      <button style="position: absolute; right:0" onclick="location.href='product_add.php'" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
                         <i class="ti-plus"></i>Add New Product</button>
                     </span>
                     <p style="font-size: medium;">( รายการผลิตภัณฑ์อาหารเลี้ยงสัตว์น้ำ )</p>

@@ -33,7 +33,7 @@
 
     if ($result->num_rows > 0) {
       $success = True;
-      
+    
 
     } else {
       echo "0 results";
@@ -73,7 +73,7 @@
                 <div class="card-title" style="position: relative; margin-bottom: inherit;">
                     <h4><?php echo $PageTitle ?></h4>
                     <span>
-                      <button style="position: absolute; right:0" onClick="javascript:window.open('feed_list_add.php', '_blank');" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
+                      <button style="position: absolute; right:0" onclick="location.href='feed_list_add.php'" class="btn btn-primary btn-addon m-b-10 m-l-5"> 
                         <i class="ti-plus"></i>Add New Feed</button>
                     </span>
                     <p style="font-size: medium;">( ตารางบันทึกข้อมูลการให้อาหารสัตว์น้ำ )</p>
