@@ -36,9 +36,12 @@
           //end_date
           $end_date = date_create($_POST['end_stocking_date']);
         
-              $end_time = $_POST['end_stocking_time'];
-              $end_hour = substr($end_time,0,2);
-              $end_minutes = substr($end_time,3,2);
+              // $end_time = $_POST['end_stocking_time'];
+              // $end_hour = substr($end_time,0,2);
+              // $end_minutes = substr($end_time,3,2);
+
+              $end_hour = $_POST['end_stocking_time'];
+              $end_minutes = '00';
 
           date_time_set($end_date, $end_hour, $end_minutes);
 
@@ -62,18 +65,18 @@
             $newRecord = "<p>Edit record successfully</p>";
             $text =  '<b>Your Input:</b>' . 
                     '<ul><li>- Pond ID: ' . $id . 
-                    '</li><li>- End Stocking Datetime: ' . $_POST['end_stocking_date'] . ' ' . $_POST['end_stocking_time'] . 
+                    '</li><li>- End Stocking Datetime: ' . $end_date .
                     '</li><li>- Revenue: ' . $_POST['revenue'] . 
                     '</li><li>- Status: ' . ($_POST['status'] == 1 ? 'Active' : 'Inactive') . 
                     '</li><li>- Updated Date: ' . $date . 
                     '</li></ul>';
 
             // for refresh new values
-            $result['end_stocking_date'] = $_POST['end_stocking_date']; 
-            $result['end_stocking_time'] = date('H:i',strtotime($_POST["end_stocking_time"]));
+            $result['end_stocking_date'] = $end_date;
+            // $result['end_stocking_time'] = date('H:i',strtotime($_POST["end_stocking_date"]));
             $result['revenue'] = $_POST['revenue'];
             $result['status'] = ($_POST['status'] == 1 ? 'Active' : 'Inactive');
-            echo $result['end_stocking_time'];
+            // echo $result['end_stocking_time'];
           }
         } 
       }
@@ -132,7 +135,37 @@
                                   <input type="date" class="form-control input-default" name="end_stocking_date" value="<?php echo isset($result["end_stocking_date"]) ? date('Y-m-d',strtotime($result["end_stocking_date"])) : '' ?>">
                               </div>
                               <div class="col">
-                                  <input type="time" class="form-control input-default" name="end_stocking_time" value="<?php echo date('H:i',strtotime($result["end_stocking_date"])) ?>">
+                                  <!-- <input type="time" class="form-control input-default" name="end_stocking_time" value="<?php echo date('H:i',strtotime($result["end_stocking_date"])) ?>"> -->
+                                  <select class="form-control input-default" style="height: 42px;" name="end_stocking_time" required>
+                                    
+                                    <option value="<?php echo date('H',strtotime($result["end_stocking_date"])) ?>"><?php echo date('H:i',strtotime($result["end_stocking_date"])) ?> (selected)</option>
+                                    <option value="00">00:00</option>
+                                    <option value="01">01:00</option>
+                                    <option value="02">02:00</option>
+                                    <option value="03">03:00</option>
+                                    <option value="04">04:00</option>
+                                    <option value="05">05:00</option>
+                                    <option value="06">06:00</option>
+                                    <option value="07">07:00</option>
+                                    <option value="08">08:00</option>
+                                    <option value="09">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+
+                                  </select>
+                              
                               </div>
                             </div>
                         </div>

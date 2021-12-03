@@ -46,9 +46,12 @@
           //start_date
           $start_date = date_create($_POST['start_stocking_date']);
         
-              $start_time = $_POST['start_stocking_time'];
-              $start_hour = substr($start_time,0,2);
-              $start_minutes = substr($start_time,3,2);
+              // $start_time = $_POST['start_stocking_time'];
+              // $start_hour = substr($start_time,0,2);
+              // $start_minutes = substr($start_time,3,2);
+
+              $start_hour = $_POST['start_stocking_time'];
+              $start_minutes = "00";
 
           date_time_set($start_date, $start_hour, $start_minutes);
 
@@ -150,7 +153,36 @@
                                   <input type="date" id="dateStartPicker" class="form-control input-default" name="start_stocking_date" value="">
                               </div>
                               <div class="col">
-                                  <input type="time" class="form-control input-default" name="start_stocking_time" value="00:00">
+                                  <!-- <input type="time" class="form-control input-default" name="start_stocking_time" value="00:00"> -->
+                                  <select class="form-control input-default" style="height: 42px;" name="start_stocking_time" required>
+                                    <!-- <?php for ($x = 0; $x <= 24; $x++) 
+                                      {echo '<option value="">' . $x . '</option>';}
+                                    ?> -->
+                                    <option value="00">00:00</option>
+                                    <option value="01">01:00</option>
+                                    <option value="02">02:00</option>
+                                    <option value="03">03:00</option>
+                                    <option value="04">04:00</option>
+                                    <option value="05">05:00</option>
+                                    <option value="06">06:00</option>
+                                    <option value="07">07:00</option>
+                                    <option value="08">08:00</option>
+                                    <option value="09">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                  </select>
                               </div>
                           </div>
                         </div>

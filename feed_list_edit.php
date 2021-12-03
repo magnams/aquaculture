@@ -19,7 +19,7 @@
 
       $sql_pond_name = "SELECT b.`pond_name` FROM `pond` a
                         INNER JOIN `pond_header` b on a.pond_header_id = b.pond_header_id
-                        WHERE a.`pond_id` = $Pond_ID AND a.`status` = '1'";
+                        WHERE a.`pond_id` = $Pond_ID";
       $result_pond_name = $conn->query($sql_pond_name)->fetch_assoc();
       
       // var_dump($result_pond_name);
@@ -42,9 +42,12 @@
           //end_date
           $end_date = date_create($_POST['final_check_date']);
         
-              $end_time = $_POST['final_check_time'];
-              $end_hour = substr($end_time,0,2);
-              $end_minutes = substr($end_time,3,2);
+              // $end_time = $_POST['final_check_time'];
+              // $end_hour = substr($end_time,0,2);
+              // $end_minutes = substr($end_time,3,2);
+
+              $end_hour =  $_POST['final_check_time'];
+              $end_minutes = '00';
 
           date_time_set($end_date, $end_hour, $end_minutes);
 
@@ -73,7 +76,7 @@
             $newRecord = "<p>Edit record successfully</p>";
             $text =  '<b>Your Input:</b>' . 
                     '<ul><li>- Feed ID: ' . $id . 
-                    '</li><li>- Final Check Time: ' . $_POST['final_check_date'] . ' ' . $_POST['final_check_time'] . 
+                    '</li><li>- Final Check Time: ' . $end_date . 
                     '</li><li>- ABW: ' . $_POST['abw'] . 
                     '</li><li>- Feed Meal 1: ' . $_POST['feed_meal1'] . 
                     '</li><li>- Feed Meal 2: ' . $_POST['feed_meal2'] . 
@@ -85,8 +88,8 @@
                     '</li></ul>';
 
             // for refresh new values
-            $result['final_check_date'] = $_POST['final_check_date'];
-            $result['final_check_time'] = $_POST['final_check_time'];
+            $result['Final_Check_Time'] = $end_date;
+            // $result['Final_Check_Time'] = date('H:i',strtotime($_POST["final_check_time"]));
             $result['abw'] = $_POST['abw'];
             $result['feed_meal1'] = $_POST['feed_meal1'];
             $result['feed_meal2'] = $_POST['feed_meal2'];
@@ -149,10 +152,40 @@
                             <label>Final Check Time:</label>
                             <div class="form-row">
                               <div class="col">
-                                  <input type="date" class="form-control input-default" name="final_check_date" value="">
+                                  <input type="date" class="form-control input-default" name="final_check_date" value="<?php echo isset($result["Final_Check_Time"]) ? date('Y-m-d',strtotime($result["Final_Check_Time"])) : '' ?>">
                               </div>
                               <div class="col">
-                                  <input type="time" class="form-control input-default" name="final_check_time" value="00:00">
+                                  <!-- <input type="time" class="form-control input-default" name="final_check_time" value="00:00"> -->
+
+                                  <select class="form-control input-default" style="height: 42px;" name="final_check_time" required>
+                                    
+                                    <option value="<?php echo date('H',strtotime($result["Final_Check_Time"])) ?>"><?php echo date('H:i',strtotime($result["Final_Check_Time"])) ?> (selected)</option>
+                                    <option value="00">00:00</option>
+                                    <option value="01">01:00</option>
+                                    <option value="02">02:00</option>
+                                    <option value="03">03:00</option>
+                                    <option value="04">04:00</option>
+                                    <option value="05">05:00</option>
+                                    <option value="06">06:00</option>
+                                    <option value="07">07:00</option>
+                                    <option value="08">08:00</option>
+                                    <option value="09">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                    
+                                  </select>
                               </div>
                             </div>
                         </div>
