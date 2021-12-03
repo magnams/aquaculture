@@ -29,6 +29,7 @@ if (isset($_POST['reg_user'])) {
   $Lastname = mysqli_real_escape_string ($db, $_POST['Lastname']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+  $user_number = mysqli_real_escape_string($db, $_POST['user_number']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -59,8 +60,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = $password_1;//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO user (username, email, Firstname, Lastname, password) 
-  			  VALUES ('$username', '$email', '$Firstname', '$Lastname', '$password')";
+  	$query = "INSERT INTO user (username, email, Firstname, Lastname, password, user_number) 
+  			  VALUES ('$username', '$email', '$Firstname', '$Lastname', '$password', '$user_number')";
   	mysqli_query($db, $query);
 
 

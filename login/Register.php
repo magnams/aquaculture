@@ -1,4 +1,5 @@
 <?php include('server.php') ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,10 @@
 	<div class="input-group">
   	  <label for ='Lastname'>นามสกุล</label>
   	  <input type="text" name="Lastname" value="">
+  	</div>
+	<div class="input-group">
+  	  <label for ='user_number'>หมายเลขประจำตัว</label>
+  	  <input type="text" name="user_number" value="">
   	</div>
   	<div class="input-group">
   	  <label for ='password'>รหัสผ่าน</label>

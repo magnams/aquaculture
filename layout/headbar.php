@@ -25,7 +25,7 @@
                                     <div class="dropdown-content-body">
                                         <ul>
                                             <li>
-                                                <a href="#" onClick="document.location.href='pond_header.php'">
+                                                <a href="#" onClick="document.location.href='login/profile.php'">
                                                     <i class="ti-user"></i>
                                                     <span>Profile</span>
                                                 </a>
