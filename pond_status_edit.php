@@ -49,7 +49,7 @@
           // echo $end_date
 
 
-
+          $_POST['revenue'] =  !empty($_POST['revenue']) ? $_POST['revenue'] : '0';
 
 
           $sql = "UPDATE `pond` SET 

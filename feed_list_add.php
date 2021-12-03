@@ -46,6 +46,11 @@
 
          
 
+          $_POST['feed_meal1'] =  !empty($_POST['feed_meal1']) ? $_POST['feed_meal1'] : '0';
+          $_POST['feed_meal2'] =  !empty($_POST['feed_meal2']) ? $_POST['feed_meal2'] : '0';
+          $_POST['feed_meal3'] =  !empty($_POST['feed_meal3']) ? $_POST['feed_meal3'] : '0';
+         
+
           $sql = "INSERT INTO `feed_list`(`Pond_ID`, `Product_ID`, `Start_Check_Time`, `ABW`, `Feed_Meal1`, `Feed_Meal2`, `Feed_Meal3`, `updated_at`) 
                   VALUES ('$_POST[pond_name]','$_POST[product_name]','$start_date','$_POST[abw]','$_POST[feed_meal1]','$_POST[feed_meal2]','$_POST[feed_meal3]', '$date')";
          
@@ -193,8 +198,8 @@
                           </div>
                         </div>   -->
                         <div class="form-group">
-                            <label>ABW:</label>
-                            <input type="text" class="form-control input-default" placeholder="จำไม่ได้ถามนิน" name="abw">
+                            <label>Average Body Weight (g):</label>
+                            <input type="text" class="form-control input-default" placeholder="น้ำหนัก (กรัม)" name="abw">
                         </div>
                         <div class="form-group">
                             <label>Feed Meal 1:</label>

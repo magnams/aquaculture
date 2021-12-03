@@ -28,6 +28,14 @@
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
           $date = date("Y-m-d H:i:s", strtotime('+6 hours'));
+
+
+
+          $_POST['unit_price'] =  !empty($_POST['unit_price']) ? $_POST['unit_price'] : '0';
+          $_POST['unit_weight'] =  !empty($_POST['unit_weight']) ? $_POST['unit_weight'] : '0';
+          $_POST['remaining_stock'] =  !empty($_POST['remaining_stock']) ? $_POST['remaining_stock'] : '0';
+
+          
           $sql = "UPDATE `product` SET 
                   `product_name`='$_POST[product_name]',
                   `brand`='$_POST[brand]',

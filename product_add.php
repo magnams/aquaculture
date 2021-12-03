@@ -29,6 +29,12 @@
       if (!empty($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         if ( (empty($nameErr)) )  {
           $date = date("Y-m-d H:i:s", strtotime('+6 hours'));
+
+          $_POST['unit_price'] =  !empty($_POST['unit_price']) ? $_POST['unit_price'] : '0';
+          $_POST['unit_weight'] =  !empty($_POST['unit_weight']) ? $_POST['unit_weight'] : '0';
+          $_POST['remaining_stock'] =  !empty($_POST['remaining_stock']) ? $_POST['remaining_stock'] : '0';
+
+
           $sql = "INSERT INTO `product`(`user_id`, `product_name`, `brand`, `pallet_no`, `lot_no`, `unit_price`, `unit_weight`, `remaining_stock`, `updated_at`) 
                   VALUES ( $_SESSION[user_id],'$_POST[product_name]','$_POST[brand]','$_POST[pallet_no]','$_POST[lot_no]','$_POST[unit_price]','$_POST[unit_weight]','$_POST[remaining_stock]', '$date')";
           

@@ -73,6 +73,8 @@
 
           // $_POST['pond_header_id'] = '2';
 
+          $_POST['revenue'] =  !empty($_POST['revenue']) ? $_POST['revenue'] : '0';
+
           $sql = "INSERT INTO `pond`(`pond_header_id`, `start_stocking_date`, `revenue`, `updated_at`, `status`) 
                   VALUES ('$_POST[pond_header_id]','$start_date','$_POST[revenue]','$date', '$_POST[status]')";
          

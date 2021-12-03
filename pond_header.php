@@ -135,7 +135,7 @@
           
           // var categoryId = $("#deleteIcon").attr('data-categoryid');
           // console.log(id);
-          document.location = "pond_status_delete.php?id=" + id;
+          document.location = "pond_header_delete.php?id=" + id;
           
         }
       })

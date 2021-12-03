@@ -55,7 +55,12 @@
           // echo $end_date
 
 
-
+          $_POST['feed_meal1'] =  !empty($_POST['feed_meal1']) ? $_POST['feed_meal1'] : '0';
+          $_POST['feed_meal2'] =  !empty($_POST['feed_meal2']) ? $_POST['feed_meal2'] : '0';
+          $_POST['feed_meal3'] =  !empty($_POST['feed_meal3']) ? $_POST['feed_meal3'] : '0';
+          $_POST['feed_meal4'] =  !empty($_POST['feed_meal4']) ? $_POST['feed_meal4'] : '0';
+          $_POST['feed_meal5'] =  !empty($_POST['feed_meal5']) ? $_POST['feed_meal5'] : '0';
+          $_POST['remaining_feed'] =  !empty($_POST['remaining_feed']) ? $_POST['remaining_feed'] : '0';
 
 
           $sql = "UPDATE `feed_list` SET 

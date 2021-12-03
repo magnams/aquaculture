@@ -50,7 +50,7 @@
 	Swal.fire({
 	title: 'Redirect to Application',
 	html: 'I will close in <b></b> milliseconds.',
-	timer: 3500,
+	timer: 2555,
 	timerProgressBar: true,
 	didOpen: () => {
 		Swal.showLoading()
