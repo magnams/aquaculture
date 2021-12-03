@@ -78,7 +78,7 @@
                     FROM `pond_header` a 
                     INNER JOIN `pond` b on a.`pond_header_id` = b.`pond_header_id`
                     WHERE a.user_id = $_SESSION[user_id]
-                    AND (b.`end_stocking_date` = '' OR b.`end_stocking_date` is null);";
+                    AND (b.`status` = '1');";
 
   $result_pond_name = $conn->query($sql_pond_name);
 
@@ -120,7 +120,8 @@
                         </div>
                         <div class="form-group">
                             <label>Pond Name:</label><code> * </code>
-                            <select class="form-control" name="pond_name">
+                            <select class="form-control" name="pond_name" required>
+                                  <option value="">กรุณาเลือกบ่อเลี้ยง</option>
                                 <?php foreach ($result_pond_name as $value): ?>
                                     <option value="<?php echo $value["pond_id"]; ?>">
                                         <?php echo $value["pond_id"] . ' : ' . $value["pond_name"]; ?>
@@ -130,7 +131,8 @@
                         </div>
                         <div class="form-group">
                             <label>Product Name:</label><code> * </code>
-                            <select class="form-control" name="product_name">
+                            <select class="form-control" name="product_name" required>
+                                  <option value="">กรุณาเลือกอาหารเลี้ยง</option>
                                 <?php foreach ($result_product_name as $value): ?>
                                     <option value="<?php echo $value["product_id"]; ?>">
                                         <?php echo $value["product_id"] . ' : ' . $value["product_name"]; ?>

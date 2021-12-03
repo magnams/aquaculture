@@ -1,24 +1,5 @@
-<!-- <style>
-  table.dataTable thead .sorting:after,
-  table.dataTable thead .sorting:before,
-  table.dataTable thead .sorting_asc:after,
-  table.dataTable thead .sorting_asc:before,
-  table.dataTable thead .sorting_asc_disabled:after,
-  table.dataTable thead .sorting_asc_disabled:before,
-  table.dataTable thead .sorting_desc:after,
-  table.dataTable thead .sorting_desc:before,
-  table.dataTable thead .sorting_desc_disabled:after,
-  table.dataTable thead .sorting_desc_disabled:before {
-    bottom: .5em;
-  }
-</style>
 
-<script>
-  $(document).ready(function () {
-$('#dtBasicExample').DataTable();
-$('.dataTables_length').addClass('bs-select');
-});
-</script> -->
+
 
 <?php $PageTitle="Pond Status Management" ?>
 <?php include 'layout/header.php';?>
@@ -41,7 +22,7 @@ $('.dataTables_length').addClass('bs-select');
   
     // $_SESSION['user_id'] = 99;
   
-    $sql = "SELECT a.`pond_id`, b.`pond_name`, a.`pond_header_id`, a.`start_stocking_date`, a.`end_stocking_date`, a.`revenue`, a.`updated_at` 
+    $sql = "SELECT a.`pond_id`, b.`pond_name`, a.`pond_header_id`, a.`start_stocking_date`, a.`end_stocking_date`, a.`revenue`, a.`updated_at`,  a.`status`
             FROM `pond` a
             INNER JOIN `pond_header` b on a.pond_header_id = b.pond_header_id
             WHERE b.user_id = $_SESSION[user_id];";
@@ -109,7 +90,7 @@ $('.dataTables_length').addClass('bs-select');
                                       <td class="color-success"><?php echo $value["revenue"]; ?></td>
                                       <!-- <td><?php echo $value["updated_at"]; ?></td> -->
                                       
-                                      <td>
+                                      <!-- <td>
                                         <?php if( (isset($value["end_stocking_date"]) ? $value["end_stocking_date"] : date("Y-m-d H:i:s", strtotime('+6 hours')) ) >= date("Y-m-d H:i:s", strtotime('+6 hours'))  ) : ?> 
                                           <span class="badge badge-primary">active</span>
                                           
@@ -117,13 +98,24 @@ $('.dataTables_length').addClass('bs-select');
                                             <span class="badge badge-danger">Inactive</span>
 
                                         <?php endif; ?>
-                                      </td>
+                                      </td> -->
 
+                                      <td>
+                                        <?php if( $value["status"] == 1) : ?> 
+                                          <span class="badge badge-primary">active</span>
+                                          
+                                        <?php else : ?> 
+                                            <span class="badge badge-danger">Inactive</span>
+
+                                        <?php endif; ?>
+                                      </td>
+                                      
                                       <td>
                                         <a href="pond_status_edit.php?id=<?php echo $value["pond_id"]; ?>">
                                           <i class="ti-pencil-alt" style="color: inherit; font-size: large;"></i>
                                         </a>&nbsp;
-                                        <a href="pond_status_delete.php?id=<?php echo $value["pond_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
+                                        <!-- <a href="pond_status_delete.php?id=<?php echo $value["pond_id"]; ?>" id="delete" onclick="return confirm('Do you really want to delete?');"> -->
+                                        <a href="#" onclick="delFunction(<?php echo $value['pond_id']; ?>)" >
                                           <i class="ti-trash" style="color: red; font-size: large;"></i>
                                         </a>
                                       </td>
@@ -151,13 +143,34 @@ $('.dataTables_length').addClass('bs-select');
     </div>
   </div>
 </div>
-<script>
-  $(document).ready(function () {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-  });
-</script>
+
     <?php include 'layout/footer.php';?>
+
+    
+<script type="text/javascript">
+  
+
+  function delFunction(id){
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Delete Pond ID: " + id + " !!!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+          // var categoryId = $("#deleteIcon").attr('data-categoryid');
+          // console.log(id);
+          document.location = "pond_status_delete.php?id=" + id;
+          
+        }
+      })
+    };
+
+</script>
 </body>
 
 </html>

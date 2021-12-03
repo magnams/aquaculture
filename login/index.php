@@ -16,6 +16,9 @@
 <head>
 	<title>หน้าหลัก</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- SweetAlert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -42,6 +45,31 @@
     <?php endif ?>
 </div>
 		
+<script>
+	let timerInterval
+	Swal.fire({
+	title: 'Redirect to Application',
+	html: 'I will close in <b></b> milliseconds.',
+	timer: 3500,
+	timerProgressBar: true,
+	didOpen: () => {
+		Swal.showLoading()
+		const b = Swal.getHtmlContainer().querySelector('b')
+		timerInterval = setInterval(() => {
+		b.textContent = Swal.getTimerLeft()
+		}, 100)
+	},
+	willClose: () => {
+		clearInterval(timerInterval)
+	}
+	}).then((result) => {
+	/* Read more about handling dismissals below */
+	if (result.dismiss === Swal.DismissReason.timer) {
+		console.log('I was closed by the timer');
+		document.location = "../feed_list.php";
+	}
+	})
+</script>
 </body>
 </html>
 

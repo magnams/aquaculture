@@ -97,7 +97,8 @@
                                         <a href="product_edit.php?id=<?php echo $value["product_id"]; ?>">
                                           <i class="ti-pencil-alt" style="color: inherit; font-size: large;"></i>
                                         </a>&nbsp;
-                                        <a href="product_delete.php?id=<?php echo $value["product_id"]; ?>" onclick="return confirm('Do you really want to delete?');">
+                                        <!-- <a href="product_delete.php?id=<?php echo $value["product_id"]; ?>" onclick="return confirm('Do you really want to delete?');"> -->
+                                        <a href="#" onclick="delFunction(<?php echo $value['product_id']; ?>)" >
                                           <i class="ti-trash" style="color: red; font-size: large;"></i>
                                         </a>
                                       </td>
@@ -130,7 +131,28 @@
     </div>
   </div>
 </div>
-<script>
+
+<script type="text/javascript">
+
+  function delFunction(id){
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Delete Product ID: " + id + " !!!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+          // var categoryId = $("#deleteIcon").attr('data-categoryid');
+          // console.log(id);
+          document.location = "pond_status_delete.php?id=" + id;
+          
+        }
+      })
+    };
 
 </script>
     <?php include 'layout/footer.php';?>

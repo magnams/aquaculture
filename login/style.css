@@ -66,3 +66,7 @@ form, .content {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
+
+.btn-w100{
+  display:block;width:100%
+}

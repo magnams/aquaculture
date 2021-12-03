@@ -1,4 +1,4 @@
-
+  
 
 <?php $PageTitle="Feed Records" ?>
 <?php include 'layout/header.php';?>
@@ -24,7 +24,7 @@
     $sql = "SELECT c.`Feed_ID`, c.`Pond_ID`, c.`Product_ID`, c.`Start_Check_Time`, c.`Final_Check_Time`, c.`ABW`, c.`Feed_Meal1`, c.`Feed_Meal2`, c.`Feed_Meal3`, c.`Feed_Meal4`, c.`Feed_Meal5`, c.`Remaining_Feed`, c.`created_at`, c.`updated_at`,
             b.`pond_name`
             FROM `feed_list` c
-            INNER JOIN (SELECT * FROM `pond` WHERE `end_stocking_date` ='' or `end_stocking_date` is null) a on c.pond_id = a.pond_id
+            INNER JOIN `pond` a on c.pond_id = a.pond_id
             INNER JOIN `pond_header` b on a.pond_header_id = b.pond_header_id
             WHERE b.user_id = $_SESSION[user_id];";
 
@@ -119,7 +119,8 @@
                                           <a href="feed_list_edit.php?id=<?php echo $value["Feed_ID"]; ?>&pond_id=<?php echo $value["Pond_ID"]; ?>&product_id=<?php echo $value["Product_ID"]; ?>">
                                             <i class="ti-pencil-alt" style="color: inherit; font-size: large;"></i>
                                           </a>&nbsp;
-                                          <a href="feed_list_delete.php?id=<?php echo $value["Feed_ID"]; ?>" onclick="return confirm('Do you really want to delete?');">
+                                          <!-- <a href="feed_list_delete.php?id=<?php echo $value["Feed_ID"]; ?>" onclick="return confirm('Do you really want to delete?');"> -->
+                                          <a href="#" onclick="delFunction(<?php echo $value['Feed_ID']; ?>)" >
                                             <i class="ti-trash" style="color: red; font-size: large;"></i>
                                           </a>
                                         </td>
@@ -150,15 +151,37 @@
 </div>
 <script>
     // $(document).ready(function () {
-    //   $('#table_id').DataTable();
+      $('#table_id').DataTable();
     //   $('.dataTables_length').addClass('bs-select');
     // });
+
+    function delFunction(id){
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Delete Feed ID: " + id + " !!!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+          // var categoryId = $("#deleteIcon").attr('data-categoryid');
+          // console.log(id);
+          document.location = "pond_status_delete.php?id=" + id;
+          
+        }
+      })
+    };
+
+
 </script>
     <?php include 'layout/footer.php';?>
 
 
 
-
+    
  
     
     <!-- scripit init-->

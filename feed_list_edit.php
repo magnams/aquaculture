@@ -19,9 +19,9 @@
 
       $sql_pond_name = "SELECT b.`pond_name` FROM `pond` a
                         INNER JOIN `pond_header` b on a.pond_header_id = b.pond_header_id
-                        WHERE a.`pond_id` = $Pond_ID";
+                        WHERE a.`pond_id` = $Pond_ID AND a.`status` = '1'";
       $result_pond_name = $conn->query($sql_pond_name)->fetch_assoc();
-
+      
       // var_dump($result_pond_name);
       // echo '<br>' . $result_pond_name["pond_name"];
 

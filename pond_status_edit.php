@@ -9,7 +9,7 @@
 
       $id = $_GET['id'];
       
-      $sql = "SELECT a.`pond_id`, b.`pond_name`, a.`pond_header_id`, a.`start_stocking_date`, a.`end_stocking_date`, a.`revenue`, a.`updated_at` 
+      $sql = "SELECT a.`pond_id`, b.`pond_name`, a.`pond_header_id`, a.`start_stocking_date`, a.`end_stocking_date`, a.`revenue`, a.`updated_at`, a.`status` 
               FROM `pond` a
               INNER JOIN `pond_header` b on a.pond_header_id = b.pond_header_id
               WHERE a.`pond_id` = $id LIMIT 1;";
@@ -52,6 +52,7 @@
           $sql = "UPDATE `pond` SET 
                   `end_stocking_date`='$end_date',
                   `revenue`='$_POST[revenue]',
+                  `status`='$_POST[status]',
                   `updated_at`='$date' WHERE `pond_id` = $id";
           
           
@@ -63,6 +64,7 @@
                     '<ul><li>- Pond ID: ' . $id . 
                     '</li><li>- End Stocking Datetime: ' . $_POST['end_stocking_date'] . ' ' . $_POST['end_stocking_time'] . 
                     '</li><li>- Revenue: ' . $_POST['revenue'] . 
+                    '</li><li>- Status: ' . ($_POST['status'] == 1 ? 'Active' : 'Inactive') . 
                     '</li><li>- Updated Date: ' . $date . 
                     '</li></ul>';
 
@@ -70,6 +72,7 @@
             $result['end_stocking_date'] = $_POST['end_stocking_date']; 
             $result['end_stocking_time'] = date('H:i',strtotime($_POST["end_stocking_time"]));
             $result['revenue'] = $_POST['revenue'];
+            $result['status'] = ($_POST['status'] == 1 ? 'Active' : 'Inactive');
             echo $result['end_stocking_time'];
           }
         } 
@@ -126,7 +129,7 @@
                             <label>End Stocking Date:</label>
                             <div class="form-row">
                               <div class="col">
-                                  <input type="date" class="form-control input-default" name="end_stocking_date" value="<?php echo date('Y-m-d',strtotime($result["end_stocking_date"])) ?>">
+                                  <input type="date" class="form-control input-default" name="end_stocking_date" value="<?php echo isset($result["end_stocking_date"]) ? date('Y-m-d',strtotime($result["end_stocking_date"])) : '' ?>">
                               </div>
                               <div class="col">
                                   <input type="time" class="form-control input-default" name="end_stocking_time" value="<?php echo date('H:i',strtotime($result["end_stocking_date"])) ?>">
@@ -135,7 +138,20 @@
                         </div>
 
 
+                        <div class="form-group">
+                            <label>Status:</label>
+                            <select class="form-control" name="status">
+                            <?php if( $result['status'] == 1 ) : ?>
+                                <option value="1" selected>Active</option>
+                                <option value="0">Inactive</option>
 
+                            <?php else : ?> 
+                                <option value="1">Active</option>
+                                <option value="0" selected>Inactive</option>
+                            <?php endif; ?>
+
+														</select>
+                        </div>
 
 
                         <div class="form-group">

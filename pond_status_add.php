@@ -1,5 +1,4 @@
 
-
 <?php $PageTitle="Add New Pond" ?>
 <?php include 'layout/header.php';?>
 <body>
@@ -71,8 +70,8 @@
 
           // $_POST['pond_header_id'] = '2';
 
-          $sql = "INSERT INTO `pond`(`pond_header_id`, `start_stocking_date`, `revenue`, `updated_at`) 
-                  VALUES ('$_POST[pond_header_id]','$start_date','$_POST[revenue]','$date')";
+          $sql = "INSERT INTO `pond`(`pond_header_id`, `start_stocking_date`, `revenue`, `updated_at`, `status`) 
+                  VALUES ('$_POST[pond_header_id]','$start_date','$_POST[revenue]','$date', '$_POST[status]')";
          
           // echo $sql;
           
@@ -85,6 +84,7 @@
                     '</li><li>- Pond Header ID: ' . $_POST['pond_header_id'] .
                     '</li><li>- Start Stocking Date: ' . $start_date . 
                     '</li><li>- Revenue: ' . $_POST['revenue'] . 
+                    '</li><li>- Status: ' . ($_POST['status'] == 1 ? 'Active' : 'Inactive') . 
                     '</li></ul>';
             $id += 1;
           }
@@ -133,7 +133,9 @@
                         <div class="form-group">
                             <label>Pond Name:</label><code> * <?php echo $nameErr;?></code>
                             <!-- <input type="text" class="form-control input-default" placeholder="" name="pond_header_id"> -->
-                            <select class="form-control" name="pond_header_id">
+                            <select class="form-control" name="pond_header_id" required>
+                                  <option value="">กรุณาเลือกบ่อเลี้ยง</option>
+
                                 <?php foreach ($result as $value): ?>
                                     <option value="<?php echo $value["pond_header_id"]; ?>">
                                         <?php echo $value["pond_header_id"] . ' : ' . $value["pond_name"]; ?>
@@ -171,14 +173,20 @@
                         </div> -->
 
 
-
+                        <div class="form-group">
+                            <label>Status:</label>
+                            <select class="form-control" name="status" required>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+														</select>
+                        </div>
 
 
                         <div class="form-group">
                             <label>Revenue:</label>
                             <input type="number" class="form-control input-default" placeholder="ระบุรายได้" name="revenue">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>&nbsp;
+                        <button type="submit" id="btnSubmit" class="btn btn-primary btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>&nbsp;
                         <button type="button" id="btnClear" class="btn btn-default btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Clear</button> 
                     </form>
                 </div>
@@ -235,28 +243,19 @@
     $("#btnClear").click(function(){
         location.reload();
     });
+    // $("#btnSubmit").click(function(){
+    //   Swal.fire(
+    //     'Good job!',
+    //     'You clicked the button!',
+    //     'success'
+    //   )
+    // });
   });
-
-
-  // $('#chkEndDate').click(function(){
-  //   if($(this).prop("checked") == true){
-  //       $('#endStockingDate').css("display", "block");
-  //       // console.log("Checkbox is checked.");
-  //   }
-  //   else if($(this).prop("checked") == false){
-  //       $('#endStockingDate').css("display", "none");   
-  //       // console.log("Checkbox is unchecked.");
-  //   }
-  // });
-
-
 
 
   if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
   }   
-
- 
 
 </script>
     <?php include 'layout/footer.php';?>
