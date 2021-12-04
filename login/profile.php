@@ -14,7 +14,8 @@
 		die("Connection failed: " . $db->connect_error);
 	}
 
-	if (isset($_POST['profile_user'])) {
+	// if (isset($_POST['profile_user'])) {
+	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['Firstname'])){
 		// receive all input values from the form
 		$Firstname = mysqli_real_escape_string($db, $_POST['Firstname']);
 		$Lastname = mysqli_real_escape_string($db, $_POST['Lastname']);
@@ -36,7 +37,6 @@
 			$_SESSION['Lastname'] = $Lastname;
 			$_SESSION['user_number'] = $user_number;
 
-			
 		}
 		// header('location: ../feed_list.php');
 	}
@@ -84,13 +84,16 @@
   	  <input type="text" name="user_number" value="<?php echo isset($result_user['user_number']) ? $result_user['user_number'] : ''; ?>">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn btn-w100" name="profile_user" onclick="return confirm('Do you really want to edit?');">บันทึก</button>
-  	  <!-- <button type="button" class="btn btn-w100" name="profile_user" onclick="submitFunction()">บันทึก</button> -->
+  	  <!-- <button type="submit" class="btn btn-w100" name="profile_user" onclick="return confirm('Do you really want to edit?');">บันทึก</button> -->
+  	  <button type="button" class="btn btn-w100" name="profile_user" onclick="submitFunction()">บันทึก</button>
   	</div>
   	<p>
   		ยืนยันข้อมูลถูกต้อง? <a href="../feed_list.php"> กลับเข้าสู่หน้าหลัก</a>
   	</p>
   </form>
+
+
+
 
   <script>
     
@@ -98,31 +101,46 @@
     function submitFunction(){
       Swal.fire({
         title: 'Are you sure?',
-        text: "Delete Feed ID:  !!!",
-        icon: 'warning',
+        text: "Do you really want to edit?",
+        icon: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes'
       }).then((result) => {
         if (result.isConfirmed) {
           
-          // var categoryId = $("#deleteIcon").attr('data-categoryid');
-          // console.log(id);
-        //  document.location = "pond_status_delete.php?id=" + id;
-			// document.getElementById("myFormRegister").submit();\
-			// $("#myFormRegister")[0].submit(function(){
-			// 	alert("Submitted");
-			// });
-			document.forms["myFormRegister"].submit();
-
-          
+			document.getElementById("myFormRegister").submit();
+			
+			
         }
       })
     };
 
+	function successAlert(){
+		Swal.fire({
+			icon: 'success',
+			title: 'Your data has been saved',
+			showConfirmButton: false,
+			timer: 1500
+			})
+	}
+
+	
+
+	//Prevent Resubmission
+	if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+  	} 
 
 </script>
+<?php
+	if (isset($success)){
+  		if ($success === True) {
+            
+			echo "<script> successAlert(); </script>"; 
+	}}
+?>
 <!-- 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
