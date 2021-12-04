@@ -111,9 +111,11 @@
           // console.log(id);
         //  document.location = "pond_status_delete.php?id=" + id;
 			// document.getElementById("myFormRegister").submit();\
-			$("myFormRegister").submit(function(){
-				alert("Submitted");
-			});
+			// $("#myFormRegister")[0].submit(function(){
+			// 	alert("Submitted");
+			// });
+			document.forms["myFormRegister"].submit();
+
           
         }
       })
