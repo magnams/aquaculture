@@ -42,8 +42,8 @@
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome, <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">Sign Out</a> </p>
+    	<p>Welcome, <strong><?php echo $_SESSION['Firstname'] . ' ' . $_SESSION['Lastname']; ?></strong></p>
+    	<p> <a href="../feed_list.php" style="color: blue;">Go to your farm</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?logout='1'" style="color: red;">Sign Out</a> </p>
     <?php endif ?>
 </div>
 		

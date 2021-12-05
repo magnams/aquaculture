@@ -98,6 +98,7 @@
   	<p>
   		ยืนยันข้อมูลถูกต้อง? <a href="../feed_list.php"> Back to Feed List</a>
   	</p>
+	  <?php  echo md5('1234') ?>
   </form>
 
 

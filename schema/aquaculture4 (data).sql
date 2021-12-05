@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 02:14 PM
+-- Generation Time: Dec 05, 2021 at 02:37 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -231,12 +231,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `user_number`, `Firstname`, `Lastname`, `email`, `password`) VALUES
-(6, 'pongthanin', NULL, 'nin', 'wang', 'nin@gmail.com', 'ixaajph7'),
-(7, 'mom', NULL, 'ธิมลกร', 'สุขขา', 'mom@gmail.com', 'shopee'),
-(8, 'palm', 'ก1234567', 'Palm', 'Chartyingcharoen', 'palm.cha@gmail.com', '1'),
-(9, 'main', NULL, 'Palm', 'Chartyingcharoen', 'magnams@hotmail.com', '1234'),
-(11, 'maintest', 'etstset ', 'Palmse', 'Chartyingcharoen', 'magnamses@hotmail.com', '1234'),
-(12, 'data', '64199130055', 'pongthanin', 'wangkiat ', 'pongthanin.wk@gmail.com', 'ixaajph7');
+(6, 'pongthanin', NULL, 'nin', 'wang', 'nin@gmail.com', '82781f348dd9517506ed5b3ab105f4f1'),
+(7, 'mom', NULL, 'ธิมลกร', 'สุขขา', 'mom@gmail.com', '82781f348dd9517506ed5b3ab105f4f1'),
+(8, 'palm', 'ก1234567', 'Palm', 'Chartyingcharoen', 'palm.cha@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b'),
+(9, 'main', NULL, 'Palm', 'Chartyingcharoen', 'magnams@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(11, 'maintest', 'etstset ', 'Palmse', 'Chartyingcharoen', 'magnamses@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(12, 'data', '64199130055', 'pongthanin', 'wangkiat ', 'pongthanin.wk@gmail.com', '82781f348dd9517506ed5b3ab105f4f1'),
+(13, 'nin', '123456', 'niniya', 'ka', 'nin.wk@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759');
 
 --
 -- Indexes for dumped tables
@@ -312,7 +313,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
