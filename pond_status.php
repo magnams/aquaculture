@@ -14,6 +14,7 @@
 ?>
 
 
+
 <body>
   <?php include 'layout/sidebar.php';?>
   <?php include 'layout/headbar.php';?>
@@ -73,7 +74,8 @@
                                     <th>Pond ID</th>
                                     <th>Pond Name</th>
                                     <th>Start Stocking Date</th>
-                                    <th>End Stocking Date</th>
+                                    <th>Pond End Date</th>
+                                    <th>Age (Days)</th>
                                     <th>Revenue</th>
                                     <!-- <th>Updated Date</th> -->
                                     <th>Status</th>
@@ -87,6 +89,19 @@
                                       <td><?php echo $value["pond_name"]; ?></td>
                                       <td><?php echo $value["start_stocking_date"]; ?></td>
                                       <td><?php echo $value["end_stocking_date"]; ?></td>
+                                      <td class="">
+                                        <?php
+                                          $earlier = strtotime($value["start_stocking_date"]);
+                                          
+                                          $later = isset($value["end_stocking_date"]) ? strtotime($value["end_stocking_date"]) : time();
+                                          
+                                          $abs_diff = $later - $earlier;
+
+                                          echo round($abs_diff / (60 * 60 * 24));
+
+                                        ?>
+                                       
+                                      </td>
                                       <td class="color-success"><?php echo $value["revenue"]; ?></td>
                                       <!-- <td><?php echo $value["updated_at"]; ?></td> -->
                                       
@@ -169,6 +184,39 @@
         }
       })
     };
+    
+  </script>
+
+<script>
+  
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    <?php foreach ($result as $value): ?>
+
+      console.log(numberWithCommas(<?php echo $value["revenue"]; ?>));
+
+    <?php endforeach;?>
+
+    var myprice = '';
+    for(i = 0; i < myprice.length; i++)
+        {
+
+            //Remove Leading Zero
+            // myquantity[i].value = myquantity[i].value.toString().replace(/^0+/, "");
+           
+            // //Force Min Quantity to 1
+            // if (myquantity[i].value <= 0) {
+            //     myquantity[i].value = 1;
+            // }
+ 
+            // //Cal Total Price
+            // productprice[i].innerText = ((parseFloat((myprice[i].value.toString().replace(/,/g, "")))) * (myquantity[i].value)).toLocaleString("en-US");            
+            // gt=gt + (parseFloat((myprice[i].value.toString().replace(/,/g, "")))) * (myquantity[i].value);
+            // sumqtycal=sumqtycal + parseInt(myquantity[i].value);
+        }
+
 
 </script>
 </body>

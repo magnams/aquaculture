@@ -129,7 +129,7 @@
 
                        
                         <div class="form-group" id="endStockingDate">
-                            <label>End Stocking Date:</label>
+                            <label>Pond End Date:</label>
                             <div class="form-row">
                               <div class="col">
                                   <input type="date" class="form-control input-default" name="end_stocking_date" value="<?php echo isset($result["end_stocking_date"]) ? date('Y-m-d',strtotime($result["end_stocking_date"])) : '' ?>">
@@ -189,7 +189,7 @@
 
                         <div class="form-group">
                             <label>Revenue:</label>
-                            <input type="number" class="form-control input-default" placeholder="ระบุรายได้" name="revenue">
+                            <input type="number" class="form-control input-default" placeholder="ระบุรายได้บ่อเลี้ยง (บาท)" name="revenue" value="<?php echo isset($result['revenue']) ? $result['revenue'] : '0'; ?>">
                         </div>
 
 

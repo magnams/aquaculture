@@ -11,8 +11,8 @@
         <div class="page-header">
             <div class="page-title">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?= isset($mainPageLink) ? $mainPageLink : "#"?>"><?= isset($mainPage) ? $mainPage : "<<main>>"?></a></li>
-                    <li class="breadcrumb-item active"><?= isset($activePage) ? $activePage : "<<Aqua>>"?></li>
+                    <li class="breadcrumb-item"><b><a href="<?= isset($mainPageLink) ? $mainPageLink : "#"?>"><?= isset($mainPage) ? $mainPage : "<<main>>"?></a></b></li>
+                    <li class="breadcrumb-item active"><b><?= isset($activePage) ? $activePage : "<<Aqua>>"?></b></li>
                 </ol>
             </div>
         </div>

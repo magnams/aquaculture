@@ -88,7 +88,7 @@
                     '<ul><li>- Pond ID: ' . $id . 
                     '</li><li>- Pond Header ID: ' . $_POST['pond_header_id'] .
                     '</li><li>- Start Stocking Date: ' . $start_date . 
-                    '</li><li>- Revenue: ' . $_POST['revenue'] . 
+                    // '</li><li>- Revenue: ' . $_POST['revenue'] . 
                     '</li><li>- Status: ' . ($_POST['status'] == 1 ? 'Active' : 'Inactive') . 
                     '</li></ul>';
             $id += 1;
@@ -216,10 +216,10 @@
                         </div>
 
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Revenue:</label>
                             <input type="number" class="form-control input-default" placeholder="ระบุรายได้" name="revenue">
-                        </div>
+                        </div> -->
                         <button type="submit" id="btnSubmit" class="btn btn-primary btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>&nbsp;
                         <button type="button" id="btnClear" class="btn btn-default btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Clear</button> 
                     </form>

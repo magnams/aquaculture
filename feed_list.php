@@ -84,16 +84,17 @@
                           <table id="bootstrap-data-table-export" class="display table table-borderd table-hover">
                               <thead>
                                   <tr>
-                                    <th>Pond Name</th>
-                                    <th>Product Name</th>
-                                    <th>Start Check Time</th>
-                                    <th>Final Check Time</th>
+                                    <th>ID</th>
+                                    <th>Pond</th>
+                                    <th>Product</th>
+                                    <th>Start at</th>
+                                    <th>End at</th>
                                     <th>ABW</th>
-                                    <th>Feed Meal 1</th>
-                                    <th>Feed Meal 2</th>
-                                    <th>Feed Meal 3</th>
-                                    <th>Feed Meal 4</th>
-                                    <th>Feed Meal 5</th>
+                                    <th>Meal 1</th>
+                                    <th>Meal 2</th>
+                                    <th>Meal 3</th>
+                                    <th>Meal 4</th>
+                                    <th>Meal 5</th>
                                     <th>Remaining Feed</th>
                                     <th>Actions</th>
                                   </tr>
@@ -101,6 +102,7 @@
                               <tbody>
                                 <?php foreach ($result as $value): ?>
                                     <tr>
+                                        <td><?php echo isset($value["Feed_ID"]) ? $value["Feed_ID"] : ''; ?></td>
                                         <td><?php echo isset($value["pond_name"]) ? $value["pond_name"] : ''; ?></td>
                                         <td><?php echo $product_array[$value["Product_ID"]]; ?></td>
                                         <td><?php echo isset($value["Start_Check_Time"]) ? $value["Start_Check_Time"] : ''; ?></td>
@@ -169,7 +171,7 @@
           
           // var categoryId = $("#deleteIcon").attr('data-categoryid');
           // console.log(id);
-          document.location = "pond_status_delete.php?id=" + id;
+          document.location = "feed_list_delete.php?id=" + id;
           
         }
       })

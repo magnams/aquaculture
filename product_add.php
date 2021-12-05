@@ -102,7 +102,7 @@
                         </div>
                         <div class="form-group">
                             <label>Pallet Number:</label>
-                            <input type="text" class="form-control input-default" placeholder="" name="pallet_no">
+                            <input type="text" class="form-control input-default" placeholder="ขนาดอาหาร" name="pallet_no">
                         </div>
                         <div class="form-group">
                             <label>Lot Number:</label>
@@ -110,15 +110,15 @@
                         </div>
                         <div class="form-group">
                             <label>Unit Price:</label>
-                            <input type="number" class="form-control input-default" placeholder="ระบุราคา" name="unit_price">
+                            <input type="number" class="form-control input-default" placeholder="ระบุราคา (บาท/ถุง)" name="unit_price">
                         </div>
                         <div class="form-group">
                             <label>Unit Weight:</label>
-                            <input type="number" class="form-control input-default" placeholder="ระบุน้ำหนัก" name="unit_weight">
+                            <input type="number" class="form-control input-default" placeholder="ระบุน้ำหนัก (กิโลกรัม/ถุง)" name="unit_weight">
                         </div>
                         <div class="form-group">
                             <label>Remaining Stock:</label>
-                            <input type="number" class="form-control input-default" placeholder="ระบุจำนวนที่เหลือ" name="remaining_stock">
+                            <input type="number" class="form-control input-default" placeholder="ระบุอาหารที่เหลือ (ถุง)" name="remaining_stock">
                         </div>
                         <button type="submit" class="btn btn-primary btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Insert</button>&nbsp;
                         <button type="button" id="btnClear" class="btn btn-default btn-addon m-b-10 m-l-5"><i class="ti-reload"></i>Clear</button> 

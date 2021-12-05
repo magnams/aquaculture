@@ -148,7 +148,7 @@
           
           // var categoryId = $("#deleteIcon").attr('data-categoryid');
           // console.log(id);
-          document.location = "pond_status_delete.php?id=" + id;
+          document.location = "product_delete.php?id=" + id;
           
         }
       })

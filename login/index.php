@@ -14,8 +14,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>หน้าหลัก</title>
+	<title>Main</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/x-icon" href="../assets/images/new/shrimp16.png">
+
 
 	<!-- SweetAlert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -23,7 +25,7 @@
 <body>
 
 <div class="header">
-	<h2>หน้าหลัก</h2>
+	<h2>Main</h2>
 </div>
 <div class="content">
   	<!-- notification message -->
@@ -40,8 +42,8 @@
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>ยินดีต้อนรับ <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">ออกจากระบบ</a> </p>
+    	<p>Welcome, <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: red;">Sign Out</a> </p>
     <?php endif ?>
 </div>
 		
@@ -50,7 +52,7 @@
 	Swal.fire({
 	title: 'Redirect to Application',
 	html: 'I will close in <b></b> milliseconds.',
-	timer: 2555,
+	timer: 1555,
 	timerProgressBar: true,
 	didOpen: () => {
 		Swal.showLoading()

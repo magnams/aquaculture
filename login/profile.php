@@ -3,6 +3,13 @@
 <?php 
 	session_start();
 
+
+	if (!isset($_SESSION['username'])) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+	}
+ 
+
 	$sql_user = "SELECT * FROM user WHERE user_id = $_SESSION[user_id]";
 	$result_user = $conn->query($sql_user)->fetch_assoc();
 
@@ -53,13 +60,14 @@
 
   <!-- SweetAlert2 -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" type="image/x-icon" href="../assets/images/new/shrimp16.png">
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 </head>
 <body>
   <div class="header">
-  	<h2>แก้ไขข้อมูลส่วนตัว</h2>
+  	<h2>Edit Profile</h2>
   </div>
 	
   <form id="myFormRegister" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
@@ -72,23 +80,23 @@
   	  <input type="text" name="email" value="<?php echo $result_user["email"]; ?>" disabled>
   	</div>
 	<div class="input-group">
-  	  <label for ='Firstname'>ชื่อ</label>
-  	  <input type="text" name="Firstname" value="<?php echo isset($result_user['Firstname']) ? $result_user['Firstname'] : ''; ?>">
+  	  <label for ='Firstname'>Firstname</label>
+  	  <input type="text" name="Firstname" value="<?php echo isset($result_user['Firstname']) ? $result_user['Firstname'] : ''; ?>" placeholder="ชื่อ">
   	</div>
 	<div class="input-group">
-  	  <label for ='Lastname'>นามสกุล</label>
-  	  <input type="text" name="Lastname" value="<?php echo isset($result_user['Lastname']) ? $result_user['Lastname'] : ''; ?>">
+  	  <label for ='Lastname'>Lastname</label>
+  	  <input type="text" name="Lastname" value="<?php echo isset($result_user['Lastname']) ? $result_user['Lastname'] : ''; ?>" placeholder="นามสกุล">
   	</div>
 	<div class="input-group">
-  	  <label for ='user_number'>หมายเลขประจำตัว</label>
-  	  <input type="text" name="user_number" value="<?php echo isset($result_user['user_number']) ? $result_user['user_number'] : ''; ?>">
+  	  <label for ='user_number'>User Number</label>
+  	  <input type="text" name="user_number" value="<?php echo isset($result_user['user_number']) ? $result_user['user_number'] : ''; ?>" placeholder="หมายเลขประจำตัว">
   	</div>
   	<div class="input-group">
   	  <!-- <button type="submit" class="btn btn-w100" name="profile_user" onclick="return confirm('Do you really want to edit?');">บันทึก</button> -->
-  	  <button type="button" class="btn btn-w100" name="profile_user" onclick="submitFunction()">บันทึก</button>
+  	  <button type="button" class="btn btn-w100" name="profile_user" onclick="submitFunction()" style="cursor: pointer">Save</button>
   	</div>
   	<p>
-  		ยืนยันข้อมูลถูกต้อง? <a href="../feed_list.php"> กลับเข้าสู่หน้าหลัก</a>
+  		ยืนยันข้อมูลถูกต้อง? <a href="../feed_list.php"> Back to Feed List</a>
   	</p>
   </form>
 
