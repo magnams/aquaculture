@@ -102,7 +102,7 @@
                                         ?>
                                        
                                       </td>
-                                      <td class="color-success"><?php echo $value["revenue"]; ?></td>
+                                      <td class="color-success" id="revenue[]" name="revenue[]"><?php echo $value["revenue"]; ?></td>
                                       <!-- <td><?php echo $value["updated_at"]; ?></td> -->
                                       
                                       <!-- <td>
@@ -192,30 +192,11 @@
       function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-
-    <?php foreach ($result as $value): ?>
-
-      console.log(numberWithCommas(<?php echo $value["revenue"]; ?>));
-
-    <?php endforeach;?>
-
-    var myprice = '';
-    for(i = 0; i < myprice.length; i++)
-        {
-
-            //Remove Leading Zero
-            // myquantity[i].value = myquantity[i].value.toString().replace(/^0+/, "");
-           
-            // //Force Min Quantity to 1
-            // if (myquantity[i].value <= 0) {
-            //     myquantity[i].value = 1;
-            // }
- 
-            // //Cal Total Price
-            // productprice[i].innerText = ((parseFloat((myprice[i].value.toString().replace(/,/g, "")))) * (myquantity[i].value)).toLocaleString("en-US");            
-            // gt=gt + (parseFloat((myprice[i].value.toString().replace(/,/g, "")))) * (myquantity[i].value);
-            // sumqtycal=sumqtycal + parseInt(myquantity[i].value);
-        }
+    
+    var revenueArr = document.getElementsByName('revenue[]');
+    for(i=0; i<revenueArr.length; i++) {
+      revenueArr[i].innerText = numberWithCommas(revenueArr[i].innerText);
+    }
 
 
 </script>
