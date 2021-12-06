@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include 'setting/dbconnection.php';// Using database connection file here
 
@@ -11,7 +12,7 @@ $sql = "DELETE FROM `pond_header` WHERE `pond_header_id` = '$id'";
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
 } else {
-  echo "Error deleting record: " . $conn->error;
+  $_SESSION['error_db'] = $conn->error;
 }
 
 $conn->close();

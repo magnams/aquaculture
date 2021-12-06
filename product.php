@@ -154,6 +154,22 @@
       })
     };
 
+    function errorMessage(){
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '<?php echo isset($_SESSION['error_db']) ? $_SESSION['error_db'] : "" ?>',
+        })
+      };
+    
+
+    <?php
+      if ( isset($_SESSION['error_db']) ){
+        echo "errorMessage();";
+        unset($_SESSION['error_db']);
+      }
+    ?>
+
 </script>
     <?php include 'layout/footer.php';?>
 </body>

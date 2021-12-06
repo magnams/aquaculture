@@ -133,13 +133,27 @@
       }).then((result) => {
         if (result.isConfirmed) {
           
-          // var categoryId = $("#deleteIcon").attr('data-categoryid');
-          // console.log(id);
           document.location = "pond_header_delete.php?id=" + id;
           
         }
       })
     };
+
+    function errorMessage(){
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '<?php echo isset($_SESSION['error_db']) ? $_SESSION['error_db'] : "" ?>',
+        })
+      };
+    
+
+    <?php
+      if ( isset($_SESSION['error_db']) ){
+        echo "errorMessage();";
+        unset($_SESSION['error_db']);
+      }
+    ?>
 
 </script>
     <?php include 'layout/footer.php';?>
